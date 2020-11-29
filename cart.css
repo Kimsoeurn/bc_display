@@ -1,0 +1,21 @@
+.box1 {
+	font-family: Tahoma;
+	font-size: 13px;
+	text-decoration: none;
+	background-color: #999999;
+}
+.Tahoma13 {
+	font-family: Tahoma;
+	font-size: 13px;
+	text-decoration: none;
+	height: 30px;
+}
+.Tahoma11 { font-family: Tahoma; font-size: 11px; text-decoration: none }
+.Tahoma20 { font-family: Tahoma; font-size: 20px; text-decoration: none }
+body {
+	width: 600px;
+	height: 200px;
+}
+.table1 {
+
+}

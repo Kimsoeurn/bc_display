@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS by DwThai.Com */
+body {
+	margin: 0px;	padding: 0px;
+}
+#table1 {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100px;
+}
+#table2 {
+	width: 620px;
+	margin-top: 0px;
+	margin-left: 10px;
+	height: 270px;
+	clip: rect(1000px,auto,auto,auto);
+}
+#table3 {
+	/*float: left;*/
+	width: 100% !important;
+}
+#table4 {
+	margin-top: 52px;
+	margin-left: 130px;
+	margin-right: 50px;
+	padding-top: 296px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clip: rect(50px,auto,auto,auto);
+}
+#table5 {
+	margin-top: 10px;
+	margin-left: 130px;
+	margin-right: 50px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clip: rect(200px,auto,auto,auto);
+}
+#table6 {
+	margin-top: 13px;
+	margin-left: 130px;
+	margin-right: 50px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clip: rect(200px,auto,auto,auto);
+}
+#table7 {
+	margin-top: 13px;
+	margin-left: 130px;
+	margin-right: 50px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clip: rect(200px,auto,auto,auto);
+}
+#table8 {
+	margin-top: 13px;
+	margin-left: 130px;
+	margin-right: 50px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	clip: rect(200px,auto,auto,auto);
+}
+#table9 {
+	margin-top: -258px;
+	margin-left: 198px;
+	margin-right: 390px;
+	padding-top: -300px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	clip: rect(200px,auto,auto,auto);
+	width: 494px;
+	margin-bottom: 0px;
+}
+
+/*==================other====================*/
+.img-indent {
+	float:left;
+	margin-top: 0;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+}

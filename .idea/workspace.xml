@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/baccarat_gdc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Diamond City.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/AC_RunActiveContent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_bet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/add_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/close.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diamond city.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favicon2.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/200000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/200001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/2500.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/300000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/400000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/5000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/500000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/800000.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Back1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/B39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/P39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T34.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T35.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T36.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T37.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/T39.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/bb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/pp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/BigEyeRoad/tt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/B0.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/P.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/P0.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/T.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Bigeye/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/B.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/P.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/P.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/T.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/T0.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/CockroachRoad/Triangle.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/cancel.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/cancel1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/delete.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/delete1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/ditu4.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/ditu5.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/ditu6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/insert.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/insert1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/no.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/no1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/ok.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/ok1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/return.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/return1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/update.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/update1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/yes.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Edit/yes1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/LOGO_GDC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/0.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/1.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/2.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/3.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/4.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/5.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/6.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/7.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/8.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/9.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Light/Number/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/B0.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/B1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/B2.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/B3.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/P0.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/P1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/P2.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/P3.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/0.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/1.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/2.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/3.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/4.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/5.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/6.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/7.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/8.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/9.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/Triangle.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/T/line.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/MainRoad/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/B0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/B1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/B2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/B3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/P0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/P1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/P2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/P3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/T0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/T1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/T2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/T3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/ResultsRoad/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/B.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/P.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/P.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/T.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/T.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/SmallRoad/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Stop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Win/Thumbs.db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Win/banker.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Win/player.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Win/tie.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/button-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/login-page-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main_BG.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main_BG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main_BG0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/main_BG1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/table_1.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/table_2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/table_3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/winner.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mylayout.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phpconfig.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/select_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/time1.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ks8cq5BeLZ7AYef9pYtDTg7NxH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="" />
+      <created>1606478020408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606478020408</updated>
+      <workItem from="1606478021829" duration="15996000" />
+      <workItem from="1606573839449" duration="25609000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

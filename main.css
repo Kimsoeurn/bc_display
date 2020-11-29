@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-image: url(images/main_BG.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background: #666666;*/
+    color: #000000 !important;
+background: #396afc;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.baccarat-display {
+    padding-top: 20px !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    overflow-y: hidden;
+    /*color: #000000 !important;*/
+}
+.style1 {
+    color: #FFFEFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+.style2 {color: #FFFFFF}
+.style3 {color: #000000}
+
+#sponsorAdDiv {
+    position:absolute;
+    height:300px;
+    width:1px;
+    top:0px;
+    left:0px;
+    margin-top: 80px;
+    margin-left: 50px;
+}.style4 {
+     font-size: 36px;
+     color: #FFCC00;
+ }
+.style5 {
+    color: #0066CC;
+    font-weight: bold;
+}
+.style6 {color: #FFCC00}
+.style202 {
+    color: #F00
+}
+.style203 {
+    color: #4b67ca;
+}
+.style2034 {
+    color: black;
+    font-size: 18px;
+}
+.style2033 {
+    color:  black;
+    font-size: 28px;
+    text-shadow: black 0.1em 0.1em 0.1em;
+    text-shadow: -1px 0  red, 0 1px red,1px 0 red, 0 -1px red;
+    text-shadow: 0 0 0.2em #999, 0 0 0.2em #666;
+
+}
+.style204 {
+    color: #017f02;
+}
+.style205 {
+    color: #ff4700;
+}
+.style206 {
+    color: #999;
+}
+
+.table-border tr td {
+    border: 1px solid #d8dee1 !important;
+    background: #FFFFFF !important;
+}
+.table-result td, .table-result th { padding: 15px; }
+.table-result th { font-size: 18px !important; padding-left: 30px !important;}
+
+.keypad {
+    margin-top: 10px !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 5px !important;
+    vertical-align: center !important;
+    padding-top: 13px !important;
+    border: 1px solid #d8dee1 !important;
+    text-align: center;
+    display: inline-block;
+    color: #FFFFFF !important;
+}
+.description {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    padding-top: 0 !important;
+    display: inline-block !important;
+    color: #FFFFFF !important;
+}

@@ -1,0 +1,32 @@
+*					{ margin: 0; padding: 0; }
+
+
+
+.clear				{ clear: both; }
+
+.table1 {
+	margin-left: 19px;
+	margin-top: 10px;
+	width: 985px;
+	clear: left;
+	height: inherit;
+	border: 0;
+}
+
+
+.table2 {
+	margin-left: 197px;
+	margin-top: 35px;
+	width: 495px;
+	height: 280px;
+}
+.table3 {
+	margin-left: 195px;
+	margin-top: 38px;
+	width: 500px;
+	height: 275px;
+}
+.table4 {
+	margin-left: 250px;
+	margin-top: 150px;
+}
