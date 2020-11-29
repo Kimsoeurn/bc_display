@@ -22,16 +22,14 @@ require_once("core.php");
         }
     </style>
 
-    <?php
-    $win2 = "";
-    include "script.php"; ?>
 </head>
 <body>
 <body onload=" initAd(); document.all.win2.focus()" class="baccarat-display p-4">
 <?php
-$table_num = "DT9";
-$bet_max = 8000;
-$shoe = 4;
+$win2 = "";
+$table_num = $_GET['table_number'] ?? "DT9";
+$bet_max = $_GET['bet_max'] ?? 8000;
+$shoe = $_GET['shoe'] ?? 1;
 $bg_img = "";
 ?>
 <form method="POST" action="add_bet.php" >
@@ -94,7 +92,7 @@ $bg_img = "";
             <td width="56" align="left" valign="middle" scope="col"></td>
             <td width="30" align="left" valign="middle" scope="col">
             <span class="style1" style="padding-left:10px; padding-top: 22px;">
-                <input name="win2" type="text" id="win2" value="<?php echo $win2; ?>" size="3" maxlength="3" onKeyDown="if(event.keyCode==13) addbet();" autocomplete="off"/>
+                <input name="win2" type="text" id="win2" value="<?php echo $win2; ?>" size="3" maxlength="3" autocomplete="off"/>
             </span>
             </td>
         </tr>

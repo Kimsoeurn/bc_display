@@ -1019,6 +1019,7 @@ function Add_road_table4()
 
     $sql88 = "select bet1  from   table_sc1   ";
     $rs88 = sql_query($sql88);
+    $bet = "";
     if (!empty($rs88['bet1']) or $rs88['bet1'] != "") {
         $a1 = explode(",", $rs88['bet1']);//�Ѵ����ͧ�����͡
         $b1 = count($a1);//�Ѻ�ӹǹ������
@@ -1073,6 +1074,7 @@ function Add_road_table4()
     $a4 = explode(",", $bet);//�Ѵ����ͧ�����͡
     $b4 = count($a4);//�Ѻ�ӹǹ������
     $idd = 1;
+    $bb1 = "";
     for ($e4 = 0; $e4 < $b4; $e4++) {
         $bb1 = $bb1 . "," . $a4[$e4];
         $co1 = Check_no_bet($a4[$e4], 1);
