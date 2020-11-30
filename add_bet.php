@@ -157,6 +157,8 @@ if (!empty($win2)) {
         //$win2 == "339"
     ) {
         checkResult($win2, $table_num, $bet_max, $shoe);
+        header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+        exit();
     } else {
         var_dump("Please enter correct number");
     }

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add_bet.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_bet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core.php" beforeDir="false" afterPath="$PROJECT_DIR$/core.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phpconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.php" beforeDir="false" afterPath="$PROJECT_DIR$/testing.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +33,7 @@
   <component name="ProjectId" id="1ks8cq5BeLZ7AYef9pYtDTg7NxH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -63,6 +65,7 @@
       <workItem from="1606478021829" duration="15996000" />
       <workItem from="1606573839449" duration="25939000" />
       <workItem from="1606660442923" duration="10130000" />
+      <workItem from="1606675682025" duration="15917000" />
     </task>
     <servers />
   </component>
@@ -81,5 +84,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/phpconfig.php</url>
+          <line>632</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+ini_set('xdebug.overload_var_dump', 0);
 $conn;
 $ServerName = "localhost";
 $UserName = "root";
@@ -424,16 +425,19 @@ function Ck_r($rm, $win2)
 
 function Check_no_bet($key1, $key2)
 {
-    $a = explode("-", $key1);
-    if ($key2 == 1) {
-        return $a[0];
+    if (!empty($key1)) {
+        $a = explode("-", $key1);
+        if ($key2 == 1) {
+            return $a[0];
+        }
+        if ($key2 == 2) {
+            return $a[1];
+        }
+        if ($key2 == 3) {
+            return $a[2];
+        }
     }
-    if ($key2 == 2) {
-        return $a[1];
-    }
-    if ($key2 == 3) {
-        return $a[2];
-    }
+    return "";
 }
 
 function Add_road_table()
@@ -619,8 +623,8 @@ function Add_road_table()
 
 function Check_max_bet($bet, $col_ck1)
 {
-    $a2 = explode(",", $bet);//�Ѵ����ͧ�����͡
-    $b2 = count($a2);//�Ѻ�ӹǹ������
+    $a2 = explode(",", $bet);
+    $b2 = count($a2);
 	$ma = null;
     for ($e2 = 0; $e2 < $b2; $e2++) {
         $c1 = Check_no_bet($a2[$e2], 1);

@@ -5,6 +5,23 @@ function sql_query($sql) {
     return $row;
 }
 
+function open_db() {
+    $conn = mysqli_connect('localhost', 'root', 'root');
+//		 mysql_query("SET NAMES 'tis620' ");
+    if (!$conn) die("Failed connect to database");
+
+    mysqli_select_db($conn, 'scroll') or die ("Failed select database");
+    return $conn;
+}
+
+function close_db() {
+    mysqli_close(open_db());
+}
+
+function get_bets() {
+
+}
+
 
 /**
  * Check player result
@@ -53,18 +70,19 @@ function checkResult($win2, $table_num, $bet_max, $shoe) {
         $sum_pp++;
     } //Sum Pair Banker
     /////////////////////////////
+    $roundDate = $rs['round_date'];
     if (empty($rs['bet1']) or $rs['bet1'] == "") {
         $kkk = 0;
         $bet_1 = sprintf("%03d", $kkk) . $win2;
         $strSQL = "UPDATE table_detail SET bet1 = '$bet_1', sum_p = '$sum_p' ,sum_b = '$sum_b' , sum_t = '$sum_t' ,sum_pb = '$sum_pb' ,sum_pp = '$sum_pp'  Where table_no = '$table_num' and bet_max = '$bet_max' and status ='1' and shoe_no='$shoe'  ";
         mysqli_query($GLOBALS['db'], $strSQL) or die ("��á�͡�������բ�ͼԴ��Ҵ�Դ���  ��سҵ�Ǩ�ͺ���ա����") . mysqli_error();
-        Add_road_table4();
+        AddBigRoadTable();
     } else {
         $kkk = 0;
         $bet_1 = $rs['bet1'] . "," . sprintf("%03d", $kkk) . $win2;
         $strSQL = "UPDATE table_detail SET bet1 = '$bet_1', sum_p = '$sum_p' ,sum_b = '$sum_b' , sum_t = '$sum_t' ,sum_pb = '$sum_pb' ,sum_pp = '$sum_pp'  Where table_no = '$table_num' and bet_max = '$bet_max' and status ='1' and shoe_no='$shoe'  ";
         mysqli_query($GLOBALS['db'], $strSQL) or die ("��á�͡�������բ�ͼԴ��Ҵ�Դ���  ��سҵ�Ǩ�ͺ���ա����") . mysqli_error();
-        Add_road_table4();
+        AddBigRoadTable();
     }
 
     $sql = "select  bet1,round_date  from table_detail where status  ='1' ";
@@ -79,19 +97,19 @@ function checkResult($win2, $table_num, $bet_max, $shoe) {
         $strSQL99 = "INSERT INTO table_sc1 (bet1,round_date) VALUES ('$b1', '$roundDate' )";
         mysqli_query($GLOBALS['db'], $strSQL99);
         if (!empty($win2)) {
-            Add_road_table();
-            Add_road_table2();
-            Add_road_table3();
-            Add_road_table4();
+            AddBigRoadTable();
+            AddCockRoachRoad();
+            AddBigEyeBoard();
+            addSmallRoad();
         }
     } else {
         $strSQL99 = "UPDATE table_sc1 SET bet1='$b1', round_date ='$roundDate' ";
         mysqli_query($GLOBALS['db'], $strSQL99);
         if (!empty($win2)) {
-            Add_road_table();
-            Add_road_table2();
-            Add_road_table3();
-            Add_road_table4();
+            AddBigRoadTable();
+            AddCockRoachRoad();
+            AddBigEyeBoard();
+            addSmallRoad();
         }
     }
 
@@ -252,3 +270,747 @@ function dd($data) {
     var_dump($data);
     die();
 }
+
+function AddBigRoadTable() {
+    $sql88 = "select bet1  from   table_sc1   ";
+    $rs88 = sql_query($sql88);
+    $bet = "";
+    if (!empty($rs88['bet1']) or $rs88['bet1'] != "") {
+        $a1 = explode(",", $rs88['bet1']);
+        $b1 = count($a1);
+//    dd($b1);
+        //$re = substr($a1[0],3,1);
+        $cut_tie = "";
+        for ($e = 0; $e < $b1; $e++) {
+
+            if (empty($cut_tie)) {
+                $cut_tie = substr($a1[$e], 3, 3);
+            } else {
+                $cut_tie = $cut_tie . "," . substr($a1[$e], 3, 3);
+            }
+        }
+        $a2 = explode(",", $cut_tie);//�Ѵ����ͧ�����͡
+        $b2 = count($a2);//�Ѻ�ӹǹ������
+
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+
+            if (substr($a2[$e2], 0, 1) == 3 and substr($a2[$e2 - 1], 0, 1) != 3) {
+                $t_1 = substr($a2[$e2 - 1], 0, 1);
+            } else {
+                $t_1 = 0;
+            }
+
+            if ($e2 == 0) {
+                $j = 1;
+                $k = 1;
+            } else {
+                if (substr($a2[$e2], 0, 1) == substr($a2[$e2 - 1], 0, 1) or substr($a2[$e2], 0, 1) == 3 or substr($a2[$e2], 0, 1) == $t_1) {
+                    $j = $j;
+                    $k = $k + 1;
+                } else {
+                    $j = $j + 1;
+                    $k = 1;
+                }
+            }
+
+            if ($j == 1 and $k == 1) {
+                $bet = $j . "-" . $k . "-" . $a2[$e2];
+            } else {
+                $bet = $bet . "," . $j . "-" . $k . "-" . $a2[$e2];
+            }
+
+        }
+
+        $a4 = explode(",", $bet);
+        $b4 = count($a4);
+        $idd = 1;
+        $bb1 = "";
+//$a = explode("-", $a4[1]);
+        $co1 = 0;
+        $co2 = 0;
+        $co3 = 0;
+        for ($e4 = 0; $e4 < $b4; $e4++) {
+            $bb1 = $bb1 . "," . $a4[$e4];
+            $co1 = Check_no_bet($a4[$e4], 1);
+            $co2 = Check_no_bet($a4[$e4], 2);
+            $co3 = Check_no_bet($a4[$e4], 3);
+
+            $strSQL4 = "update table_road3 set co='$co1',ro='$co2',status='$co3'   where id ='$idd' ";
+            mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+
+            $idd++;
+
+            ////////////////////////////////////////////////////////////////////
+        }
+////////////////////////////////////////////////////////////////////////////////////////////
+        $str = "SELECT * from table_road3 where co !='0'  order by id";
+        $result = mysqli_query($GLOBALS['db'], $str);
+        $i = 0;
+        $v = 0;
+        while ($rs = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            if ($i == 0) {
+                $data_bet = substr($rs['status'], 0, 1);
+            } else {
+                $data_bet = $data_bet . "," . substr($rs['status'], 0, 1);
+            }
+            $i++;
+        }
+
+/////////////////////////////////////////////////////////////////////////////////////
+//echo $data_bet;
+        $a2 = explode(",", $data_bet);
+        $b2 = count($a2);
+        $num = 1;
+        $coo1 = 1;
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+
+            $ck_bet1 = $a2[$e2];
+//        $ck_bet2 = $a2[$e2];
+//        $ck_bet3 = $a2[$e2];
+            $ck_bet2 = $e2 >= 1 ? $a2[$e2 - 1] : $a2[$e2];
+            $ck_bet3 = $e2 >= 2 ? $a2[$e2 - 1] : $a2[$e2];
+
+            if ($ck_bet1 == 3) {
+                $ck_bet4++;
+                if ($a2[$e2 - $ck_bet4] == '') {
+                    $t_1 = $ck_bet1;
+                } else {
+                    $t_1 = $a2[$e2 - $ck_bet4];
+                }
+            } else {
+                if ($ck_bet2 == 3) {
+                    $ck_bet4++;
+                    if ($a2[$e2 - $ck_bet4] == '') {
+                        $t_1 = $ck_bet1;
+                    } else {
+                        $t_1 = $a2[$e2 - $ck_bet4];
+                    }
+                    $ck_bet4 = 0;
+                } else {
+                    $ck_bet4 = 0;
+                    $t_1 = 0;
+                }
+            }
+
+//     echo $ck_bet1."--".$t_1."<br>";
+            if ($e2 <= 0) {
+                $rm = 1;
+                $re = " case1 " . $t_1 . "--" . $ck_bet4;
+                $coo1 = $coo1;
+            } else {
+
+                if ($ck_bet1 == $ck_bet2 or $ck_bet1 == 3 or $ck_bet1 == $t_1) {
+                    $rm++;
+                    $v++;
+                    if ($v > 5) {
+                        $kk++;
+                        $rm = $rm + 6 - 1;
+                    } else {
+                        $kk = 0;
+                    }
+                    $rm = $rm;
+                    $re = " case2 " . $t_1 . "--" . $ck_bet4;
+                    $coo1 = $coo1;
+
+                } else {
+                    $v = 0;
+                    $rm = (6 * ($coo1) + 1);
+                    $coo1++;
+                    $rm = $rm;
+                    $re = " case3 " . $t_1 . "--" . $ck_bet4;
+
+                }
+
+
+            }
+            $num++;
+//    echo $ck_bet1 . "--" . $t_1 . "<br>";
+            $j = $e2 + 1;
+            $strSQL4 = "update table_road3 set  rm='$rm'   where id ='$j' and co !='0' ";
+            mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            $str8 = "SELECT rm from table_road3 where rm='$rm' and co !='0' ";
+            $result8 = mysqli_query($GLOBALS['db'], $str8);
+            $nr = mysqli_num_rows($result8);
+            if ($nr > 1) {
+                $rm = $rm + 5;
+                $strSQL4 = "update table_road3 set  rm='$rm'   where id ='$j' and co !='0' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+
+            }
+        }
+        $str8 = "SELECT max(rm) as rmm from table_road3   ";
+        $result8 = mysqli_query($GLOBALS['db'], $str8);
+        $rs = mysqli_fetch_array($result8, MYSQLI_ASSOC);
+        $rmm = $rs['rmm'];
+        $strSQL4 = "update  table_detail set  mk='$rmm'   where status='1' ";
+        mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+    }
+}
+
+function AddCockRoachRoad() {
+    $sql88 = "select bet1  from   table_sc1   ";
+    $rs88 = sql_query($sql88);
+    $bet = "";
+    if (!empty($rs88['bet1']) or $rs88['bet1'] != "") {
+        $a1 = explode(",", $rs88['bet1']);
+        $b1 = count($a1);
+        //$re = substr($a1[0],3,1);
+        for ($e = 0; $e < $b1; $e++) {
+            if (substr($a1[$e], 3, 1) != 3) {
+                if (empty($cut_tie)) {
+                    $cut_tie = substr($a1[$e], 3, 1);
+                } else {
+                    $cut_tie = $cut_tie . "," . substr($a1[$e], 3, 1);
+                }
+            }
+        }
+        $a2 = explode(",", $cut_tie);
+        $b2 = count($a2);
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+            if (!empty($a2[$e2])) {
+                if ($e2 == 0) {
+                    $j = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $j = $j;
+                    } else {
+                        $j = $j + 1;
+                    }
+                }
+                if ($e2 == 0) {
+                    $k = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $k = $k + 1;
+                    } else {
+                        $k = 1;
+                    }
+                }
+                if ($j == 1 and $k == 1) {
+                    $bet = $j . "-" . $k . "-" . $a2[$e2];
+                } else {
+                    $bet = $bet . "," . $j . "-" . $k . "-" . $a2[$e2];
+                }
+            }
+
+        }
+////////////////////////////////////////////////////////////////////////////////////////////////////
+        //echo $bet;
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        $a4 = explode(",", $bet);
+        $b4 = count($a4);
+        $idd = 1;
+        $co1 = 0;
+        $co2 = 0;
+        $co3 = 0;
+//    dd(Check_no_bet($a4[0], 2));
+        $bb1 = "";
+        for ($e4 = 0; $e4 < $b4; $e4++) {
+            $bb1 = $bb1 . "," . $a4[$e4];
+            $co1 = Check_no_bet($a4[$e4], 1);
+            $co2 = Check_no_bet($a4[$e4], 2);
+            $co3 = Check_no_bet($a4[$e4], 2);
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+            $col_ck1 = $co1 - 1;
+            $col_ck2 = $co1 - 4;
+            $col_ck3 = $co1 - 3;
+            $col_max1 = Check_max_bet($bb1, $col_ck1);
+            $col_max2 = Check_max_bet($bb1, $col_ck2);
+            $col_max3 = Check_max_bet($bb1, $col_ck3);
+            if ($co2 == 1) {
+                if ($col_max1 == $col_max2) {
+                    $status = 2;
+                    $re = "case2.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $status = 1;
+                    $re = "case2.2";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.2<br>";
+                }
+            } else {
+                //echo $co2."----".$col_max3;
+                if ($co2 <= $col_max3) {
+                    $status = 2;
+                    $re = "case1.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $cc = $co2 - $col_max3;
+                    if ($co2 > $col_max3 and $cc == 1) {
+                        $status = 1;
+                        $re = "case1.2";
+                        //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    } else {
+                        $status = 2;
+                        $re = "case1.3";
+                        //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    }
+                }
+            }
+            //////////////////////////////////////////////////////////////////////////////////////////
+            $ck_start = $co1 . $co2;
+            if ($ck_start >= 41 and $co1 >= 4) {
+                $strSQL4 = "update table_road set  status='1'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            } else {
+                $strSQL4 = "update table_road set  status='0'   where id ='$idd'";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            }
+            if ($ck_start >= 42 and $co1 >= 4) {
+                // echo $re."<br>" ;
+                $strSQL4 = "update table_road set co='$co1',ro='$co2',status='$status'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+                $idd++;
+            }
+
+            ////////////////////////////////////////////////////////////////////
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        $str = "SELECT * from table_road where co !='0'  order by id";
+        $result = mysqli_query($GLOBALS['db'], $str);
+        $i = 0;
+        $v = 0;
+        $data_bet = "";
+        while ($rs = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+            if ($i == 0) {
+                $data_bet = $rs['status'];
+            } else {
+                $data_bet = $data_bet . "," . $rs['status'];
+            }
+            $i++;
+        }
+        $a2 = !empty($data_bet) ? explode(",", $data_bet) : [];//�Ѵ����ͧ�����͡
+        $b2 = count($a2);//�Ѻ�ӹǹ������
+        $num = 1;
+        $coo1 = 1;
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+
+            $ck_bet1 = $a2[$num];
+            $ck_bet2 = $a2[$num - 1];
+            if ($e2 == 0) {
+                $rm = 1;
+                $re = " case1 ";
+                $coo1 = $coo1;
+            } else {
+                if ($ck_bet1 == $ck_bet2 and $e2 != 0) {
+                    $rm++;
+                    $v++;
+                    if ($v > 5) {
+                        $kk++;
+                        $rm = $rm + 6 - 1;
+                    } else {
+                        $kk = 0;
+                    }
+                    $rm = $rm;
+                    $re = " case2 ";
+                    $coo1 = $coo1;
+
+                }
+                if ($ck_bet1 != $ck_bet2 and $e2 != 0) {
+                    $v = 0;
+                    $rm = (6 * ($coo1) + 1);
+                    $coo1++;
+                    $rm = $rm;
+                    $re = " case3 ";
+                }
+                $num++;
+            }
+            $j = $e2 + 1;
+            $strSQL4 = "update table_road set  rm='$rm'   where id ='$j' and co !='0' ";
+            mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            $str8 = "SELECT rm from table_road where rm='$rm' and co !='0' ";
+            $result8 = mysqli_query($GLOBALS['db'], $str8);
+            $nr = mysqli_num_rows($result8);
+            if ($nr > 1) {
+                $rm = $rm + 5;
+                $strSQL4 = "update table_road set  rm='$rm'   where id ='$j' and co !='0' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            }
+
+        }
+
+    }
+}
+
+function AddBigEyeBoard() {
+    $sql88 = "select bet1  from   table_sc1   ";
+    $rs88 = sql_query($sql88);
+    if (!empty($rs88['bet1']) or $rs88['bet1'] != "") {
+        $a1 = explode(",", $rs88['bet1']);
+        $b1 = count($a1);
+        //$re = substr($a1[0],3,1);
+        for ($e = 0; $e < $b1; $e++) {
+            if (substr($a1[$e], 3, 1) != 3) {
+                if (empty($cut_tie)) {
+                    $cut_tie = substr($a1[$e], 3, 1);
+                } else {
+                    $cut_tie = $cut_tie . "," . substr($a1[$e], 3, 1);
+                }
+            }
+        }
+
+        $a2 = explode(",", $cut_tie);
+        $b2 = count($a2);
+
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+            if (!empty($a2[$e2])) {
+                if ($e2 == 0) {
+                    $j = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $j = $j;
+                    } else {
+                        $j = $j + 1;
+                    }
+                }
+                if ($e2 == 0) {
+                    $k = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $k = $k + 1;
+                    } else {
+                        $k = 1;
+                    }
+                }
+                if ($j == 1 and $k == 1) {
+                    $bet = $j . "-" . $k . "-" . $a2[$e2];
+                } else {
+                    $bet = $bet . "," . $j . "-" . $k . "-" . $a2[$e2];
+                }
+            }
+        }
+////////////////////////////////////////////////////////////////////////////////////////////////////
+        //echo $bet;
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+        $a4 = explode(",", $bet);//�Ѵ����ͧ�����͡
+        $b4 = count($a4);//�Ѻ�ӹǹ������
+        $idd = 1;
+        $bb1 = "";
+        for ($e4 = 0; $e4 < $b4; $e4++) {
+            $bb1 = $bb1 . "," . $a4[$e4];
+            $co1 = Check_no_bet($a4[$e4], 1);
+            $co2 = Check_no_bet($a4[$e4], 2);
+            $co3 = Check_no_bet($a4[$e4], 2);
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            $col_ck1 = $co1 - 1;
+            $col_ck2 = $co1 - 2;
+            $col_ck3 = $co1 - 1;
+
+            $col_max1 = Check_max_bet($bb1, $col_ck1);
+            $col_max2 = Check_max_bet($bb1, $col_ck2);
+            $col_max3 = Check_max_bet($bb1, $col_ck3);
+            if ($co2 == 1) {
+                if ($col_max1 == $col_max2) {
+                    $status = 2;
+                    $re = "case2.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $status = 1;
+                    $re = "case2.2";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.2<br>";
+                }
+
+            } else {
+                //echo $co2."----".$col_max3;
+                if ($co2 <= $col_max3) {
+                    $status = 2;
+                    $re = "case1.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $cc = $co2 - $col_max3;
+                    if ($co2 > $col_max3 and $cc == 1) {
+                        $status = 1;
+                        $re = "case1.2";
+                        // $kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    } else {
+                        $status = 2;
+                        $re = "case1.3";
+                        //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    }
+                }
+            }
+
+            ////////////////////////////////////////////////////////////////////////////////////////////
+            $ck_start = $co1 . $co2;
+            if ($ck_start >= 21 and $co1 >= 2) {
+                $strSQL4 = "update table_road1 set  status='1'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            } else {
+                $strSQL4 = "update table_road1 set  status='0'   where id ='$idd'";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            }
+            if ($ck_start >= 22 and $co1 >= 2) {
+                // echo $re."<br>" ;
+                $strSQL4 = "update table_road1 set co='$co1',ro='$co2',status='$status'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+                $idd++;
+            }
+
+            ////////////////////////////////////////////////////////////////////
+        }
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
+    $str = "SELECT * from table_road1 where co !='0'  order by id";
+    $result = mysqli_query($GLOBALS['db'],$str);
+    $i = 0;
+    $v = 0;
+    $data_bet = "";
+    while ($rs = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        if ($i == 0) {
+            $data_bet = $rs['status'];
+        } else {
+            $data_bet = $data_bet . "," . $rs['status'];
+        }
+        $i++;
+    }
+    $a2 = !empty($data_bet) ? explode(",", $data_bet) : [];
+    $b2 = count($a2);
+    $num = 1;
+    $coo1 = 1;
+    for ($e2 = 0; $e2 < $b2; $e2++) {
+        $ck_bet1 = $a2[$num];
+        $ck_bet2 = $a2[$num - 1];
+        if ($e2 == 0) {
+            $rm = 1;
+            $re = " case1 ";
+            $coo1 = $coo1;
+        } else {
+            if ($ck_bet1 == $ck_bet2 and $e2 != 0) {
+                $rm++;
+                $v++;
+                if ($v > 5) {
+                    $kk++;
+                    $rm = $rm + 6 - 1;
+                } else {
+                    $kk = 0;
+                }
+                $rm = $rm;
+                $re = " case2 ";
+                $coo1 = $coo1;
+            }
+            if ($ck_bet1 != $ck_bet2 and $e2 != 0) {
+                $v = 0;
+                $rm = (6 * ($coo1) + 1);
+                $coo1++;
+                $rm = $rm;
+                $re = " case3 ";
+
+            }
+            $num++;
+        }
+        $j = $e2 + 1;
+        $strSQL4 = "update table_road1 set  rm='$rm'   where id ='$j' and co !='0' ";
+        mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+        $str8 = "SELECT rm from table_road1 where rm='$rm' and co !='0' ";
+        $result8 = mysqli_query($GLOBALS['db'], $str8);
+        $nr = mysqli_num_rows($result8);
+        if ($nr > 1) {
+            $rm = $rm + 5;
+            $strSQL4 = "update table_road1 set  rm='$rm'   where id ='$j' and co !='0' ";
+            mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+        }
+    }
+}
+
+function addSmallRoad() {
+    $sql88 = "select bet1  from   table_sc1   ";
+    $rs88 = sql_query($sql88);
+    if (!empty($rs88['bet1']) or $rs88['bet1'] != "") {
+        $a1 = explode(",", $rs88['bet1']);//�Ѵ����ͧ�����͡
+        $b1 = count($a1);//�Ѻ�ӹǹ������
+        //$re = substr($a1[0],3,1);
+        for ($e = 0; $e < $b1; $e++) {
+            if (substr($a1[$e], 3, 1) != 3) {
+                if (empty($cut_tie)) {
+                    $cut_tie = substr($a1[$e], 3, 1);
+                } else {
+                    $cut_tie = $cut_tie . "," . substr($a1[$e], 3, 1);
+                }
+
+            }
+        }
+
+        $a2 = explode(",", $cut_tie);//�Ѵ����ͧ�����͡
+        $b2 = count($a2);//�Ѻ�ӹǹ������
+
+        for ($e2 = 0; $e2 < $b2; $e2++) {
+            if (!empty($a2[$e2])) {
+                if ($e2 == 0) {
+                    $j = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $j = $j;
+                    } else {
+                        $j = $j + 1;
+                    }
+                }
+                if ($e2 == 0) {
+                    $k = 1;
+                } else {
+                    if ($a2[$e2] == $a2[$e2 - 1]) {
+                        $k = $k + 1;
+                    } else {
+                        $k = 1;
+                    }
+                }
+                if ($j == 1 and $k == 1) {
+                    $bet = $j . "-" . $k . "-" . $a2[$e2];
+                } else {
+                    $bet = $bet . "," . $j . "-" . $k . "-" . $a2[$e2];
+                }
+            }
+        }
+////////////////////////////////////////////////////////////////////////////////////////////////////
+        //echo $bet;
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
+        $a4 = explode(",", $bet);//�Ѵ����ͧ�����͡
+        $b4 = count($a4);//�Ѻ�ӹǹ������
+        $idd = 1;
+        $bb1 = "";
+        for ($e4 = 0; $e4 < $b4; $e4++) {
+            $bb1 = $bb1 . "," . $a4[$e4];
+            $co1 = Check_no_bet($a4[$e4], 1);
+            $co2 = Check_no_bet($a4[$e4], 2);
+            $co3 = Check_no_bet($a4[$e4], 2);
+            /////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            $col_ck1 = $co1 - 1;
+            $col_ck2 = $co1 - 3;
+            $col_ck3 = $co1 - 2;
+
+            $col_max1 = Check_max_bet($bb1, $col_ck1);
+            $col_max2 = Check_max_bet($bb1, $col_ck2);
+            $col_max3 = Check_max_bet($bb1, $col_ck3);
+            if ($co2 == 1) {
+                if ($col_max1 == $col_max2) {
+                    $status = 2;
+                    $re = "case2.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $status = 1;
+                    $re = "case2.2";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.2<br>";
+                }
+
+            } else {
+                //echo $co2."----".$col_max3;
+                if ($co2 <= $col_max3) {
+                    $status = 2;
+                    $re = "case1.1";
+                    //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                } else {
+                    $cc = $co2 - $col_max3;
+                    if ($co2 > $col_max3 and $cc == 1) {
+                        $status = 1;
+                        $re = "case1.2";
+                        // $kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    } else {
+                        $status = 2;
+                        $re = "case1.3";
+                        //$kk = $col_ck1."/".$col_ck2."MAX ". $col_max1."/".$col_max2."==case 2.1<br>";
+                    }
+                }
+
+
+            }
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////
+            $ck_start = $co1 . $co2;
+            if ($ck_start >= 31 and $co1 >= 3) {
+                $strSQL4 = "update table_road2 set  status='1'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            } else {
+                $strSQL4 = "update table_road2 set  status='0'   where id ='$idd'";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            }
+            if ($ck_start >= 32 and $co1 >= 3) {
+                // echo $re."<br>" ;
+
+                $strSQL4 = "update table_road2 set co='$co1',ro='$co2',status='$status'   where id ='$idd' ";
+                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+
+                $idd++;
+            }
+
+            ////////////////////////////////////////////////////////////////////
+        }
+
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
+    $str = "SELECT * from table_road2 where co !='0'  order by id";
+    $result = mysqli_query($GLOBALS['db'], $str);
+    $i = 0;
+    $v = 0;
+    $data_bet = "";
+    while ($rs = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        if ($i == 0) {
+            $data_bet = $rs['status'];
+        } else {
+            $data_bet = $data_bet . "," . $rs['status'];
+        }
+        $i++;
+    }
+
+    $a2 = !empty($data_bet) ? explode(",", $data_bet) : [];
+    $b2 = count($a2);
+
+    $num = 1;
+    $coo1 = 1;
+    for ($e2 = 0; $e2 < $b2; $e2++) {
+
+        $ck_bet1 = $a2[$num];
+        $ck_bet2 = $a2[$num - 1];
+        if ($e2 == 0) {
+            $rm = 1;
+            $re = " case1 ";
+            $coo1 = $coo1;
+        } else {
+
+            if ($ck_bet1 == $ck_bet2 and $e2 != 0) {
+                $rm++;
+                $v++;
+                if ($v > 5) {
+                    $kk++;
+                    $rm = $rm + 6 - 1;
+                } else {
+                    $kk = 0;
+                }
+                $rm = $rm;
+                $re = " case2 ";
+                $coo1 = $coo1;
+
+            }
+            if ($ck_bet1 != $ck_bet2 and $e2 != 0) {
+                $v = 0;
+                $rm = (6 * ($coo1) + 1);
+                $coo1++;
+                $rm = $rm;
+                $re = " case3 ";
+
+            }
+
+            $num++;
+        }
+        $j = $e2 + 1;
+        $strSQL4 = "update table_road2 set  rm='$rm'   where id ='$j' and co !='0' ";
+        mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+        $str8 = "SELECT rm from table_road2 where rm='$rm' and co !='0' ";
+        $result8 = mysqli_query($GLOBALS['db'], $str8);
+        $nr = mysqli_num_rows($result8);
+        if ($nr > 1) {
+            $rm = $rm + 5;
+            $strSQL4 = "update table_road2 set  rm='$rm'   where id ='$j' and co !='0' ";
+            mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+        }
+
+    }
+}
+
