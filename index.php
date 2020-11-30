@@ -16,7 +16,7 @@ if (empty($rs11)) {
     if (empty($rs)) {
         $strSQL = "SELECT * FROM table_config order by stamp  ";
         $rs = sql_query($strSQL);
-        $table = $rs['table_no'];
+        $table = $rs['table_name'];
         $bet_max = $rs['bet_max'];
         $shoe = $rs['shoe_no'];
         $bet_min = $rs['bet_min'];
@@ -37,6 +37,7 @@ if (empty($rs11)) {
         $bet_max = $rs['bet_max'];
         $shoe = $rs['shoe_no'];
         header("Location:test.php?table_num=$table&bet_max=$bet_max&shoe=$shoe");
+        exit();
     }
 
 }

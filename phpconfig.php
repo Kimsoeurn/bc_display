@@ -1,7 +1,9 @@
 <?php
+ob_start();
+ob_clean();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
-ini_set('xdebug.overload_var_dump', 0);
+
 $conn;
 $ServerName = "localhost";
 $UserName = "root";

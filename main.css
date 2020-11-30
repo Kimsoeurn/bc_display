@@ -12,7 +12,7 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
 }
 
 .baccarat-display {
-    padding-top: 20px !important;
+    /*padding-top: 20px !important;*/
     width: 1920px !important;
     height: 1080px !important;
     overflow-y: hidden;
@@ -96,4 +96,24 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
     padding-top: 0 !important;
     display: inline-block !important;
     color: #FFFFFF !important;
+}
+
+.big-road-bet {
+    text-align: center !important;
+    padding: 5px !important;
+}
+
+.big-eye-bet {
+    text-align: center !important;
+    padding: 0 !important;
+}
+
+.table-b-e-c {
+    border: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+}
+
+.table-b-e-c tr td {
+    border: 1px solid #dddddd !important;
 }

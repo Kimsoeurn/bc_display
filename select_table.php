@@ -1,3 +1,37 @@
+<?php
+require_once "phpconfig.php";
+require_once "time1.php";
+require_once "core.php";
+
+if ( isset($_POST) && !empty($_POST) ){
+    $strSQL = "UPDATE table_detail SET status ='0' ";
+    mysqli_query( $GLOBALS['db'], $strSQL ) or die ( "Can not insert data") . mysqli_error();
+
+    $b = time ();
+    $date2=date("Y-m-d",$b);
+    $id = $_POST['table_num'] -1;
+    $strSQL2 = "SELECT * FROM  table_config where bg_img ='GDC' LIMIT $id , 1  ";
+    $row = sql_query($strSQL2);
+    $table_name = $row['table_name'];
+    $shoe = $row['shoe'];
+    $bet_max = $row['bet_max'];
+    $bet_min = $row['bet_min'];
+    $tie_max = $row['tie_max'];
+    $tie_min = $row['tie_min'];
+    $pair_max = $row['pair_max'];
+    $pair_min = $row['pair_min'];
+    $strSQL = "INSERT INTO table_detail (table_no,shoe_no,bet_max,bet_min,tie_max,tie_min,pair_max,pair_min,round_date,status) 
+                    VALUES ('$table_name','$shoe','$bet_max','$bet_min','$tie_max','$tie_min','$pair_max,'$pair_min','$date2','1')";
+    mysqli_query( $GLOBALS['db'], $strSQL )or die ( "Can not insert data") . mysqli_error();
+    $tb99 = $row['table_name'];
+    $bet =$row['bet_max'];
+    $shoe = $_POST['shoe'] ?? 1;
+    header("Location:main.php?table_num=$tb99&bet_max=$bet&shoe=$shoe");
+    exit();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -84,6 +118,7 @@
 </head>
 <body class="text-center container">
     <table class="table table-striped bg-white">
+        <caption class="text-white text-center" style="caption-side: top; font-size: 28px;">Select Table Option</caption>
         <thead>
         <tr>
             <th>NO</th>
@@ -97,54 +132,27 @@
         </tr>
         </thead>
         <tbody>
+        <?php
+        $i=0;
+        $strSQL = "SELECT * FROM  table_config where bg_img ='GDC'  group by bet_min order by bet_min ";
+        $objQuery = mysqli_query($GLOBALS['db'], $strSQL);
+        while($objResult = mysqli_fetch_array($objQuery, MYSQLI_ASSOC))
+        {
+        $i++;
+        ?>
             <tr>
-                <td>1</td>
-                <td>25</td>
-                <td>4000</td>
-                <td>10</td>
-                <td>200</td>
-                <td>10</td>
-                <td>800</td>
+                <td><?= $i ?></td>
+                <td><?= number_format($objResult['bet_min']) ?></td>
+                <td><?= number_format($objResult['bet_max']) ?></td>
+                <td><?= number_format($objResult['pair_min']) ?></td>
+                <td><?= number_format($objResult['pair_max']) ?></td>
+                <td><?= number_format($objResult['tie_min']) ?></td>
+                <td><?= number_format($objResult['tie_max']) ?></td>
                 <td>
                     <a href="#" class="btn btn-sm btn-primary">Select</a>
                 </td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>25</td>
-                <td>4000</td>
-                <td>10</td>
-                <td>200</td>
-                <td>10</td>
-                <td>800</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-primary">Select</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>25</td>
-                <td>4000</td>
-                <td>10</td>
-                <td>200</td>
-                <td>10</td>
-                <td>800</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-primary">Select</a>
-                </td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>25</td>
-                <td>4000</td>
-                <td>10</td>
-                <td>200</td>
-                <td>10</td>
-                <td>800</td>
-                <td>
-                    <a href="#" class="btn btn-sm btn-primary">Select</a>
-                </td>
-            </tr>
+        <?php } ?>
         </tbody>
     </table>
 </body>
