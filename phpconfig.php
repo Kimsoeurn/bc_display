@@ -275,9 +275,7 @@ function Chk_bet($t1, $table_num, $bet_max, $win2, $shoe)
 function Chk_bet2($t1, $table_num, $bet_max, $win2, $shoe)
 {
     $sql88 = "select bet1  from table_detail where shoe_no ='$shoe' and table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'   ";
-    //	 $result88 = mysql_query($sql88);
     $rs88 = sql_query($sql88);
-    $rs88 = !empty($rs88) ? $sql88 : "";
     if (empty($rs88['bet1']) or $rs88['bet1'] == "") {
         return "images/BigEyeRoad/T.gif";
     } else {

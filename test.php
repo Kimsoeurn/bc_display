@@ -24,7 +24,7 @@ require_once("core.php");
 
 </head>
 <body>
-<body onload=" initAd(); document.all.win2.focus()" class="baccarat-display p-4">
+<body class="baccarat-display p-4">
 <?php
 $win2 = "";
 $table_num = $_GET['table_number'] ?? "DT9";
