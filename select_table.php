@@ -1,143 +1,151 @@
-<?
- include( "phpconfig.php" );
- if ( $_POST[sub2] =="SELECT TABLE" and !empty($_POST[table_num])  and !empty($_POST[shoe])){
- Conn2DB();
- $strSQL = "UPDATE table_detail SET status ='0' ";
-				mysql_query( $strSQL, $conn )or die ( "Can not insert data") . mysql_error();
- $b = time ();
- $date2=date("Y-m-d",$b);
- $id = $_POST[table_num] -1;
-   $strSQL2 = "SELECT * FROM  table_config where bg_img ='GDC' LIMIT $id , 1  ";
-			$result2 = mysql_query($strSQL2);
-			$row = mysql_fetch_array($result2);
- 
- 	$strSQL = "INSERT INTO table_detail (table_no,shoe_no,bet_max,bet_min,tie_max,tie_min,pair_max,pair_min,round_date,status) VALUES ('$row[table_name]','$_POST[shoe]','$row[bet_max]','$row[bet_min]','$row[tie_max]','$row[tie_min]','$row[pair_max]','$row[pair_min]','$date2','1')";
-				mysql_query( $strSQL, $conn )or die ( "Can not insert data") . mysql_error();
-				$tb99 = $row[table_name];
-				$bet =$row[bet_max];
-				
-			
-	CloseDB();
- header("Location:main.php?table_num=$tb99&bet_max=$bet&shoe=$_POST[shoe]"); 
- }
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-874" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-.box1 {
-	font-family: Tahoma;
-	font-size: 13px;
-	text-decoration: none;
-	background-color: #999999;
-}
-.Tahoma13 {
-	font-family: Tahoma;
-	font-size: 13px;
-	text-decoration: none;
-	height: 30px;
-}
-.Tahoma11 { font-family: Tahoma; font-size: 11px; text-decoration: none }
-.Tahoma20 { font-family: Tahoma; font-size: 20px; text-decoration: none }
-body {
-}
-.table1 {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Baccarat Display Select Table</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="mylayout.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: 'Kanit', sans-serif !important;
+        }
+    </style>
 
-}
-body				{
-	background-color: #000000;
-}
-body,td,th {
-	color: #FFFFFF;
-	font-family: Tahoma;
-	font-size: 14px;
-}
-body {
-	background-color: #000000;
-}
-.style32 {font-size: 14px; font-family: Tahoma; color: #FFFFFF;}
--->
-</style>
-<script>
-function apply()
-{
- 
-  if(document.form1.shoe.value=="")
-  {
-    document.frm.sub2.disabled=false;
-  }
- else
-  {
-    document.frm.sub2.enabled=false;
-  }
-}
-</script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            /*background-color: #f5f5f5;*/
+            color: #ffffff !important;
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
 </head>
-
-<body onload = " if(document.all.table_num.value =='' ) { document.all.table_num.focus(); }else{  document.all.shoe.focus(); } "  >
-<div align="center">
-  <form id="form1" name="form1" method="post" action="">
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <table width="590" border="1" cellspacing="0" cellpadding="0">
-      <tr>
-        <th height="43" colspan="3" bgcolor="#006699" scope="col">PLEASE SELECT NO</th>
-        <th colspan="2" bgcolor="#006699" scope="col"><input name="table_num" type="text" id="table_num"  value="<? echo $table_num?>" size="15"  onkeydown="if(event.keyCode==13){ document.all.shoe.focus();}" autocomplete="off" /></th>
-        <th colspan="2" rowspan="2" bgcolor="#006699" scope="col"> <input type="submit" id ="sub2" name="sub2" value="SELECT TABLE"  onfocus="apply();"/></th>
-      </tr>
-      <tr>
-        <th height="30" colspan="3" bgcolor="#006699" scope="col">PLEASE SELECT SHOE</th>
-        <th colspan="2" bgcolor="#006699" scope="col"><span class="Tahoma20 style24">
-          <input name="shoe" type="text" id="shoe" value="<?echo $shoe;?>" size="15" onkeydown="if(event.keyCode==13){ document.all.sub2.focus();}"    autocomplete="off" />
-        </span></th>
-      </tr>
-      <tr>
-        <th height="30" bgcolor="#006699" scope="col">NO</th>
-        <th bgcolor="#006699" scope="col">BETMIN</th>
-        <th bordercolor="#000000" bgcolor="#006699" scope="col">BETMAX</th>
-        <th bgcolor="#006699" scope="col">PAIR MIN</th>
-        <th bgcolor="#006699" scope="col">PAIR MAX</th>
-        <th bgcolor="#006699" scope="col">TIE MIN</th>
-        <th bgcolor="#006699" scope="col">TIE MAX</th>
-      </tr>
-       <?
-		  Conn2DB();
-		  $i=0;
-	$strSQL = "SELECT * FROM  table_config where bg_img ='GDC'  group by bet_min order by bet_min ";
-	$objQuery = mysql_query($strSQL) or die ("Error Query [".$strSQL."]");
-	while($objResult = mysql_fetch_array($objQuery))
-	{
-	$i++; 
-	
-	?>
-      <tr>
-        <td height="27" bgcolor="#999999"><div align="center"><strong><span class="style32"><? echo $i?></span></strong></div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["bet_min"];?>
-        </div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["bet_max"];?>
-        </div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["pair_min"];?>
-        </div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["pair_max"];?>
-        </div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["tie_min"];?>
-        </div></td>
-        <td bgcolor="#999999"><div align="right">
-          <?=$objResult["tie_max"];?>
-        </div></td>
-      </tr>
-      <? } CloseDB(); ?>
+<body class="text-center container">
+    <table class="table table-striped bg-white">
+        <thead>
+        <tr>
+            <th>NO</th>
+            <th>BET MIN</th>
+            <th>BET MAX</th>
+            <th>PAIR MIN</th>
+            <th>PAIR MAX</th>
+            <th>TIE MIN</th>
+            <th>TIE MAX</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>25</td>
+                <td>4000</td>
+                <td>10</td>
+                <td>200</td>
+                <td>10</td>
+                <td>800</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-primary">Select</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>25</td>
+                <td>4000</td>
+                <td>10</td>
+                <td>200</td>
+                <td>10</td>
+                <td>800</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-primary">Select</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>25</td>
+                <td>4000</td>
+                <td>10</td>
+                <td>200</td>
+                <td>10</td>
+                <td>800</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-primary">Select</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>25</td>
+                <td>4000</td>
+                <td>10</td>
+                <td>200</td>
+                <td>10</td>
+                <td>800</td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-primary">Select</a>
+                </td>
+            </tr>
+        </tbody>
     </table>
-  </form>
-</div>
 </body>
 </html>
