@@ -137,6 +137,7 @@ function newShoe($table_num, $shoe, $bet_max, $bet_min, $tie_max, $tie_min, $pai
     $strSQL11 = "SELECT * from table_detail where table_no like'%$table_num' and bet_max = '$bet_max' and status ='1'  and shoe_no='$shoe' ";
     $rs11 = sql_query($strSQL11);
     $id = $rs11['id'];
+    $date7 = $rs11['round_date'];
     $strSQL2 = "UPDATE table_detail SET status = '0' where id = '$id' ";
     mysqli_query($GLOBALS['db'], $strSQL2) or die ("Can not insert datat") . mysqli_error();
     $strSQL3 = "UPDATE table_road  set co ='', ro =''  ,status ='' ,rm=''  ";

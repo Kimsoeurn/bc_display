@@ -1,5 +1,6 @@
 <?php
 require_once "phpconfig.php";
+require_once "time1.php";
 require_once "core.php";
 //$win2 = isset($_POST['win2']) ? $_POST['win2'] : "";
 $win2 = $_POST['win2'] ?? "";
