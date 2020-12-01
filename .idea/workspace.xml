@@ -6,10 +6,7 @@
       <change beforePath="$PROJECT_DIR$/inc/table_1.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/table_2.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/table_3.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/select_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/select_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +57,8 @@
       <workItem from="1606573839449" duration="25939000" />
       <workItem from="1606660442923" duration="10130000" />
       <workItem from="1606675682025" duration="19231000" />
-      <workItem from="1606724186807" duration="6216000" />
+      <workItem from="1606724186807" duration="6364000" />
+      <workItem from="1606861915703" duration="3720000" />
     </task>
     <servers />
   </component>
@@ -80,6 +78,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="781" y="463" key="NewPhpFileDialog" timestamp="1606863580629">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="781" y="463" key="NewPhpFileDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1606863580629" />
+    <state x="-1230" y="78" width="540" height="540" key="StructurePopup" timestamp="1606732420712">
+      <screen x="-1920" y="-155" width="1920" height="995" />
+    </state>
+    <state x="-1230" y="78" width="540" height="540" key="StructurePopup/0.25.1440.875/-1920.-155.1920.995@-1920.-155.1920.995" timestamp="1606732420712" />
+    <state width="600" height="440" key="javadoc.popup" timestamp="1606865211003">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="600" height="440" key="javadoc.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1606865211003" />
     <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1606724225556">
       <screen x="-1920" y="-180" width="1920" height="1080" />
     </state>

@@ -1,4 +1,4 @@
-<table class="table-b-e-c">
+<table class="table-b-e-c shadow-lg">
 
     <?php
     $sql88 = "select *  from table_sc1  ";

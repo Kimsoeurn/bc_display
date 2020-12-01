@@ -1,4 +1,4 @@
-<table class="table-b-e-c">
+<table class="table-b-e-c shadow-lg">
 
     <?php
     $sql88 = "select max(rm) as rm from  table_road2 where co !='' order by id DESC  ";

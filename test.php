@@ -66,14 +66,9 @@ require_once("core.php");
 
             <tr>
                 <td height="50%" scope="col"><?php $a= rand ( 1 , 3 )?>
-                    <div align="left">
-                        <img src="images/LOGO_GDC.png" class="img-fluid float-left" width="150px">
-                        <span style="color:#FFFFFF; font-size:9px; font-weight:bold; float: left; margin-top: 40px;">
-                  <h1 class="text-uppercase mt-6 pl-3">Diamond City Baccarat Display</h1>
-            </span>
-                    </div>
-                    <div align="center">
-                        <!--<img src="<?php if($a ==1){echo "images/BigEyeRoad/pp.png";}else{ if($a==2){echo "images/BigEyeRoad/bb.png";}else{echo "images/BigEyeRoad/tt.png";}}?>" width="30" height="30" /> --></div></td>
+                        <img src="images/LOGO_GDC.png" class="img-fluid float-left mr-3" width="150px" alt="logo">
+                    <h1 class="text-white" style="padding-top: 40px;">Diamond City Baccarat Display</h1>
+                </td>
                 <td width="20%" align="left" valign="middle" scope="col" >
                     <span class="style1" style="padding-left:10px; padding-top: 55px; font-size: 28px;">Table: <?=$table_num?></span>
                 </td>
@@ -98,87 +93,125 @@ require_once("core.php");
             </tr>
         </table>
     </form>
-    <table class="table-b-e-c">
-        <!-- ??? 1 -->
-        <?php
-        $sql88 = "select *  from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
-        //    $result88 = mysqli_query($conn, $sql88);
-        $rs88 = sql_query($sql88);
-        $sum_b = $rs88['sum_b'];
-        $sum_p = $rs88['sum_p'];
-        $sum_t = $rs88['sum_t'];
-        $sum_pb = $rs88['sum_pb'];
-        $sum_pp = $rs88['sum_pp'];
+    <div class="row no-gutters">
+        <div class="col-11">
+            <table class="table-b-e-c shadow-lg" height="289px">
+            <!-- ??? 1 -->
+            <?php
+            $sql88 = "select *  from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
+            //    $result88 = mysqli_query($conn, $sql88);
+            $rs88 = sql_query($sql88);
+            $sum_b = $rs88['sum_b'];
+            $sum_p = $rs88['sum_p'];
+            $sum_t = $rs88['sum_t'];
+            $sum_pb = $rs88['sum_pb'];
+            $sum_pp = $rs88['sum_pp'];
 
-        /////Shift table Left
+            /////Shift table Left
 
-        $c1 = explode(",",$rs88['bet1']);
-        if($rs88['mk'] <= 174){
-            $d1=1;$d2=2;$d3=3;$d4=4;$d5=5;$d6=6;$d7=7;$d8=8;$d9=9;
-            $e1=174;$e2=175;$e3=176;$e4=177;$e5=178;$e6=179;$e7=180;$e8=181;$e9=182;
-        }else{
-            $s=ceil(($rs88['mk']-174)/6)*6;
-            $d1=1+$s;$d2=2+$s;$d3=3+$s;$d4=4+$s;$d5=5+$s;$d6=6+$s;$d7=7+$s;$d8=8+$s;$d9=9+$s;
-            $e1=174+$s;$e2=175+$s;$e3=176+$s;$e4=177+$s;$e5=178+$s;$e6=179+$s;$e7=180+$s;$e8=181+$s;$e9=182+$s;
-        }
-        ?>
-        <tr>
+            $c1 = explode(",",$rs88['bet1']);
+            if($rs88['mk'] <= 174){
+                $d1=1;$d2=2;$d3=3;$d4=4;$d5=5;$d6=6;$d7=7;$d8=8;$d9=9;
+                $e1=174;$e2=175;$e3=176;$e4=177;$e5=178;$e6=179;$e7=180;$e8=181;$e9=182;
+            }else{
+                $s=ceil(($rs88['mk']-174)/6)*6;
+                $d1=1+$s;$d2=2+$s;$d3=3+$s;$d4=4+$s;$d5=5+$s;$d6=6+$s;$d7=7+$s;$d8=8+$s;$d9=9+$s;
+                $e1=174+$s;$e2=175+$s;$e3=176+$s;$e4=177+$s;$e5=178+$s;$e6=179+$s;$e7=180+$s;$e8=181+$s;$e9=182+$s;
+            }
+            ?>
+            <tr>
 
-            <?php for($t1=$d1; $t1 <= $e1 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-        <tr>
-            <?php for($t1=$d2; $t1 <= $e2 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-        <tr>
-            <?php for($t1=$d3; $t1 <= $e3 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-        <tr>
-            <?php for($t1=$d4; $t1 <= $e4 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-        <tr>
-            <?php for($t1=$d5; $t1 <= $e5 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-        <tr>
-            <?php for($t1=$d6; $t1 <= $e6 ; ){?>
-                <td scope="col">
-                    <div class="big-road-bet">
-                        <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
-                    </div>
-                </td>
-                <?php $t1= $t1+6; }?>
-        </tr>
-    </table>
-    <div class="row no-gutters mt-2">
+                <?php for($t1=$d1; $t1 <= $e1 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            <tr>
+                <?php for($t1=$d2; $t1 <= $e2 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            <tr>
+                <?php for($t1=$d3; $t1 <= $e3 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            <tr>
+                <?php for($t1=$d4; $t1 <= $e4 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            <tr>
+                <?php for($t1=$d5; $t1 <= $e5 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            <tr>
+                <?php for($t1=$d6; $t1 <= $e6 ; ){?>
+                    <td scope="col">
+                        <div class="big-road-bet">
+                            <img src="<?php echo Chk_bet($t1,$table_num,$bet_max,$win2,$shoe)?>" width="35" height="35" />
+                        </div>
+                    </td>
+                    <?php $t1= $t1+6; }?>
+            </tr>
+            </table>
+        </div>
+        <div class="col-1">
+            <div class="pl-2">
+                <table class="table-b-e-c shadow-lg" height="289px">
+                    <tr>
+                        <td style="color: red; text-align: center">Banker</td>
+                        <td style="color: blue; text-align: center">Player</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id='P1' style="padding-top:8px;" align="center"></div>
+                        </td>
+                        <td>
+                            <div  id='P4' style="vertical-align:top; padding-top:7px"   align="center"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id='P2' style="padding-top:8px;" align="center"> </div>
+                        </td>
+                        <td>
+                            <div id='P5' style="vertical-align:top; padding-top:7px"   align="center"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id='P3' style="padding-top:8px;" align="center"></div>
+                        </td>
+                        <td>
+                            <div  id='P6' style="vertical-align:top; padding-top:7px"   align="center"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters my-2">
         <div class="col-4">
             <?php include "inc/table_1.php"; ?>
         </div>
@@ -191,139 +224,113 @@ require_once("core.php");
             <?php include "inc/table_3.php"; ?>
         </div>
     </div>
-    <table style="width: 100%; margin-top: 6px;">
-        <tr>
-            <th width="50%" valign="top">
-                <table class="table-border" height="344px">
-                    <?php
-                    $sql88 = "select bet1 from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
-                    $rs88= sql_query($sql88);
+    <div class="row no-gutters">
+        <div class="col-6" id="table-marker-road">
+            <table class="table-border shadow-lg" height="344px">
+                <?php
+                $sql88 = "select bet1 from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
+                $rs88= sql_query($sql88);
 
-                    /////Shift table Left
+                /////Shift table Left
 
-                    $c1 = explode(",",$rs88['bet1']);
-                    $bet999 =count($c1) ;
-                    if($bet999 <= 84){
-                        $d1=1;$d2=2;$d3=3;$d4=4;$d5=5;$d6=6;$d7=7;$d8=8;$d9=9;
-                        $e1=84;$e2=85;$e3=86;$e4=87;$e5=88;$e6=89;$e7=90;$e8=91;$e9=92;
-                    }else{
-                        $s=ceil(($bet999-84)/6)*6;
-                        $d1=1+$s;$d2=2+$s;$d3=3+$s;$d4=4+$s;$d5=5+$s;$d6=6+$s;$d7=7+$s;$d8=8+$s;$d9=9+$s;
-                        $e1=84+$s;$e2=85+$s;$e3=86+$s;$e4=87+$s;$e5=88+$s;$e6=89+$s;$e7=90+$s;$e8=91+$s;$e9=92+$s;
-                    }
-                    ?>
+                $c1 = explode(",",$rs88['bet1']);
+                $bet999 =count($c1) ;
+                if($bet999 <= 84){
+                    $d1=1;$d2=2;$d3=3;$d4=4;$d5=5;$d6=6;$d7=7;$d8=8;$d9=9;
+                    $e1=84;$e2=85;$e3=86;$e4=87;$e5=88;$e6=89;$e7=90;$e8=91;$e9=92;
+                }else{
+                    $s=ceil(($bet999-84)/6)*6;
+                    $d1=1+$s;$d2=2+$s;$d3=3+$s;$d4=4+$s;$d5=5+$s;$d6=6+$s;$d7=7+$s;$d8=8+$s;$d9=9+$s;
+                    $e1=84+$s;$e2=85+$s;$e3=86+$s;$e4=87+$s;$e5=88+$s;$e6=89+$s;$e7=90+$s;$e8=91+$s;$e9=92+$s;
+                }
+                ?>
 
 
-                    <tr>
+                <tr>
 
-                        <?php for($t1=$d1; $t1 <= $e1 ; ){ ?>
-                            <td width="617" height="42" scope="col" valign="top"   ><div align="center" style="padding-top:5px">
-                                    <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" />
-                                </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <?php for($t1=$d1; $t1 <= $e1 ; ){ ?>
+                        <td width="617" height="42" scope="col" valign="top"   ><div align="center" style="padding-top:5px">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" />
+                            </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+                <tr>
+                    <?php for($t1=$d2; $t1 <= $e2 ; ){?>
+                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:3px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" /> </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+                <tr>
+                    <?php for($t1=$d3; $t1 <= $e3 ; ){?>
+                        <td width="617" height="42" scope="col" valign="top" ><div align="center" style="padding-top:1px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+                <tr>
+                    <?php for($t1=$d4; $t1 <= $e4 ; ){?>
+                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:1px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+                <tr>
+                    <?php for($t1=$d5; $t1 <= $e5 ; ){?>
+                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:0px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+                <tr>
+                    <?php for($t1=$d6; $t1 <= $e6; ){?>
+                        <td width="617" height="42" scope="col" valign="top" > <div align="center"  style="padding-bottom:5px"  >  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
+                        <?php $t1= $t1+6;}?>
+                </tr>
+            </table>
+        </div>
+        <div class="col-2">
+            <div class="px-2">
+                <table class="table-result shadow-lg" style="width: 100%; background: #ffffff" height="344">
+                    <tr style="color: red;">
+                        <th style="width: 50%;">Banker</th>
+                        <th><?php echo $sum_b?></th>
                     </tr>
-                    <tr>
-                        <?php for($t1=$d2; $t1 <= $e2 ; ){?>
-                            <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:3px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" /> </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <tr style="color: blue;">
+                        <th style="width: 50%">Player</th>
+                        <th><?php echo $sum_p?></th>
                     </tr>
-                    <tr>
-                        <?php for($t1=$d3; $t1 <= $e3 ; ){?>
-                            <td width="617" height="42" scope="col" valign="top" ><div align="center" style="padding-top:1px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <tr style="color: green;">
+                        <th style="width: 50%">Tie</th>
+                        <th><?php echo $sum_t?></th>
                     </tr>
-                    <tr>
-                        <?php for($t1=$d4; $t1 <= $e4 ; ){?>
-                            <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:1px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <tr style="color: red;">
+                        <th style="width: 50%">Banker Pairs</th>
+                        <th><?php echo $sum_pb?></th>
                     </tr>
-                    <tr>
-                        <?php for($t1=$d5; $t1 <= $e5 ; ){?>
-                            <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:0px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <tr style="color: blue;">
+                        <th style="width: 50%">Player Pairs</th>
+                        <th><?php echo $sum_pp?></th>
                     </tr>
-                    <tr>
-                        <?php for($t1=$d6; $t1 <= $e6; ){?>
-                            <td width="617" height="42" scope="col" valign="top" > <div align="center"  style="padding-bottom:5px"  >  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                            <?php $t1= $t1+6;}?>
+                    <tr class="text-info">
+                        <th style="width: 50%">Games</th>
+                        <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
                     </tr>
                 </table>
-            </th>
-            <th width="25%" valign="top" scope="col" style="padding-left: 8px">
-                <div>
-                    <table class="table-result" style="width: 100%; background: #ffffff" height="344">
-                        <tr style="color: red;">
-                            <th style="width: 50%;">Banker</th>
-                            <th><?php echo $sum_b?></th>
-                        </tr>
-                        <tr style="color: blue;">
-                            <th style="width: 50%">Player</th>
-                            <th><?php echo $sum_p?></th>
-                        </tr>
-                        <tr style="color: green;">
-                            <th style="width: 50%">Tie</th>
-                            <th><?php echo $sum_t?></th>
-                        </tr>
-                        <tr style="color: red;">
-                            <th style="width: 50%">Banker Pairs</th>
-                            <th><?php echo $sum_pb?></th>
-                        </tr>
-                        <tr style="color: blue;">
-                            <th style="width: 50%">Player Pairs</th>
-                            <th><?php echo $sum_pp?></th>
-                        </tr>
-                        <tr class="text-info">
-                            <th style="width: 50%">Games</th>
-                            <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
-                        </tr>
-                    </table>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <?php include "table_info.php"; ?>
                 </div>
-            </th>
-            <th width="25%" style="padding-left: 8px;">
-                <?php $class99 = "#ffffff"; ?>
-                <table style="width: 100%;" height="344px" class="table-result">
-                    <tr>
-                        <td width="114" height="31"  bgcolor=" <?=$class99?>" ></td>
-                        <td colspan="2" bgcolor=" <?=$class99?>" > <span  style=" float:right; padding-right:20px;font-size:14px; font-weight:bold;color:#000; ">MIN BET</span></td>
-                        <td width="102" colspan="2"  bgcolor=" <?=$class99?>" ><span  style=" float:right; padding-right:40px; font-size:14px; font-weight:bold;color:#000;  ">MAX BET</span></td>
-                    </tr>
-                    <tr>
-                        <td height="33"  bgcolor=" <?=$class99?>" ><span  style=" float:left; padding-left:5px;font-size:14px; font-weight:bold;color:#000; ">Player/Banker</span></td>
-                        <td colspan="2" bgcolor=" <?=$class99?>" ><div align="right" class="style2" style="padding-right:0px"><span class="style2033" style="padding-right:5px;"><?php echo number_format($bet_min,0,'.',',')?></span></div>   </td>
-                        <td colspan="2"  bgcolor=" <?=$class99?>" ><div align="right" class="style2" style="padding-right:3px"><span class="style2033"><?php echo number_format($bet_max,0,'.',',')?></span></div></td>
-                    </tr>
-                    <tr>
-                        <td height="33"  bgcolor=" <?=$class99?>" ><span  style=" float:left; padding-left:45px;font-size:14px; font-weight:bold;color:#000; ">Tie</span></td>
-                        <td colspan="2"  bgcolor=" <?=$class99?>" ><div align="right" class="style2034" style="padding-right:5px"><span class="style2034" style="padding-right:5px;"><?php echo number_format($tie_min,0,'.',',')?></span></div></td>
-                        <td colspan="2" bgcolor=" <?=$class99?>"  ><div align="right" class="style2034" style="padding-right:5px"><span class="style2034"><?php echo number_format($tie_max,0,'.',',')?></span></div></td>
-                    </tr>
-                    <tr>
-                        <td height="32"  bgcolor=" <?=$class99?>" ><span  style=" float:left; padding-left:45px;font-size:14px; font-weight:bold;color:#000; ">Pair</span></td>
-                        <td colspan="2"  bgcolor=" <?=$class99?>" ><div align="right" class="style2034" style="padding-right:5px"><span class="style2034" style="padding-right:5px;"><?php echo number_format($pair_min,0,'.',',')?></span></div></td>
-                        <td colspan="2"  bgcolor=" <?=$class99?>" ><div align="right" class="style2034" style="padding-right:5px"><span class="style2034"><?php echo number_format($pair_max,0,'.',',')?></span></div></td>
-                    </tr>
-                </table>
-            </th>
-        </tr>
-    </table>
-    <table width="100%">
-        <tr>
-            <td width="25%" scope="col">
-                <h6 class="text-center" style="color: blue; padding: 0; margin: 0; font-size: 18px;">Player</h6>
-            </td>
-            <td width="25%"   scope="col"  ><div id='P1' style="padding-top:8px;" align="center"></div></td>
-            <td width="25%"  scope="col" ><div id='P2' style="padding-top:8px;" align="center"> </div></td>
-            <td width="25%"   scope="col"  ><div id='P3' style="padding-top:8px;" align="center"></div> </td>
-        </tr>
-        <tr>
-            <td scope="col">
-                <h6 class="text-center" style="color: red; padding: 0; margin: 0; font-size: 18px;">Banker</h6>
-            </td>
-            <td scope="col" valign="top"><div  id='P4' style="vertical-align:top; padding-top:7px"   align="center"></div></td>
-            <td scope="col" valign="top"><div   id='P5' style="vertical-align:top; padding-top:7px"   align="center"></div></td>
-            <td scope="col" valign="top"><div  id='P6' style="vertical-align:top; padding-top:7px"   align="center"></div></td>
-        </tr>
-    </table>
+                <div class="col-6">
+                    <div class="pl-2">
+                        <table class="table-b-e-c shadow-lg" height="344px">
+                            <tr>
+                                <td>
+                                    <div class="keypad">/</div> Close Table
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- Winner Box-->
 <script>
