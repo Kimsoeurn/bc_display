@@ -24,6 +24,7 @@ require_once("core.php");
 
 </head>
 <body class="baccarat-display">
+<?php include "inc/modal_winner.php"; ?>
 <div class="container-fluid">
     <?php
     $win2 = "";
@@ -327,6 +328,7 @@ require_once("core.php");
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
     $(function () {
+        // $("#winner-modal").modal("show");
         $("#input-value").focus();
         $("#form-input-value").submit( function (e) {
             e.preventDefault();
@@ -342,7 +344,16 @@ require_once("core.php");
                         console.log("Error");
                     } else {
                         console.log("No error");
-                        location.reload();
+                        $("#winner-modal").modal("show");
+
+                        setTimeout(function() {
+                            $("#winner-modal").modal("hide");
+                            $("#input-value")
+                                .val("")
+                                .focus();
+                            location.reload();
+                        }, 5000);
+
                     }
                 },
                 error: function (data) {
@@ -351,6 +362,17 @@ require_once("core.php");
             });
         });
     });
+
+    function showWinner() {
+        $("#winner-modal").modal("show");
+
+        setTimeout(function() {
+            $("#winner-modal").modal("hide");
+            $("#input-value")
+                .val("")
+                .focus();
+        }, 5000);
+    }
     <?php
     $p1 =Chk_net1(1);
     $p2 =Chk_net2(1);
