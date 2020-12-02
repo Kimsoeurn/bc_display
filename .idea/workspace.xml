@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitingore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitingore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_1.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_2.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_3.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +39,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -68,7 +72,7 @@
       <workItem from="1606660442923" duration="10130000" />
       <workItem from="1606675682025" duration="19231000" />
       <workItem from="1606724186807" duration="6216000" />
-      <workItem from="1606866442714" duration="22000" />
+      <workItem from="1606866442714" duration="2633000" />
     </task>
     <servers />
   </component>

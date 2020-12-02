@@ -111,10 +111,29 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
 .table-b-e-c {
     border: 0 !important;
     width: 100% !important;
-    background: #ffffff !important;
+    /*background: #ffffff !important;*/
     color: #212529 !important;
 }
 
 .table-b-e-c tr td {
     border: 1px solid #dddddd !important;
+}
+
+.table-big-road {
+    background: #ffffff url("./images/big_road.png") no-repeat bottom right;
+}
+.table-marker-road {
+    background: #ffffff url("./images/marker_road.png") no-repeat bottom right;
+}
+
+.table-big-eye-road {
+    background: #ffffff url("./images/big_eye_road.png") no-repeat bottom right;
+}
+
+.table-cock-road {
+    background: #ffffff url("./images/cock_road.png") no-repeat bottom right;
+}
+
+.table-small-road {
+    background: #ffffff url("./images/small_road.png") no-repeat bottom right;
 }

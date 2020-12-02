@@ -95,7 +95,7 @@ require_once("core.php");
     </form>
     <div class="row no-gutters">
         <div class="col-11">
-            <table class="table-b-e-c shadow-lg" height="289px">
+            <table class="table-b-e-c shadow-lg table-big-road" height="289px">
             <!-- ??? 1 -->
             <?php
             $sql88 = "select *  from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
@@ -178,7 +178,7 @@ require_once("core.php");
         </div>
         <div class="col-1">
             <div class="pl-2">
-                <table class="table-b-e-c shadow-lg" height="289px">
+                <table class="table-b-e-c shadow-lg bg-white" height="289px">
                     <tr>
                         <td style="color: red; text-align: center">Banker</td>
                         <td style="color: blue; text-align: center">Player</td>
@@ -217,16 +217,17 @@ require_once("core.php");
         </div>
         <div class="col-4">
             <div class="px-2">
-                <?php include "inc/table_2.php"; ?>
+                <?php include "inc/table_3.php"; ?>
             </div>
         </div>
         <div class="col-4">
-            <?php include "inc/table_3.php"; ?>
+
+            <?php include "inc/table_2.php"; ?>
         </div>
     </div>
     <div class="row no-gutters">
-        <div class="col-6" id="table-marker-road">
-            <table class="table-border shadow-lg" height="344px">
+        <div class="col-6">
+            <table class="table-b-e-c shadow-lg table-marker-road" height="344px">
                 <?php
                 $sql88 = "select bet1 from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
                 $rs88= sql_query($sql88);
@@ -319,7 +320,7 @@ require_once("core.php");
                 </div>
                 <div class="col-6">
                     <div class="pl-2">
-                        <table class="table-b-e-c shadow-lg" height="344px">
+                        <table class="table-b-e-c shadow-lg bg-white" height="344px">
                             <tr>
                                 <td>
                                     <div class="keypad">/</div> Close Table
@@ -333,7 +334,12 @@ require_once("core.php");
     </div>
 </div>
 <!-- Winner Box-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
+    $(function () {
+        console.log("Hello World");
+    });
     <?php
     $p1 =Chk_net1(1);
     $p2 =Chk_net2(1);
