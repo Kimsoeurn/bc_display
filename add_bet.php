@@ -158,14 +158,33 @@ if (!empty($win2)) {
         //$win2 == "339"
     ) {
         checkResult($win2, $table_num, $bet_max, $shoe);
-        header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+        header('Content-Type: application/json');
+        echo json_encode([
+            "error" => false,
+            "message" => 'Please enter correct number',
+            "data" => "Check result " . $win2
+        ]);
         exit();
+//        header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+//        exit();
     } else {
-        var_dump("Please enter correct number");
+        header('Content-Type: application/json');
+        echo json_encode([
+            "error" => true,
+            "message" => 'Please enter correct number'
+        ]);
+        exit();
     }
 
 } else {
-    header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+//    header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+//    exit();
+    header('Content-Type: application/json');
+    echo json_encode([
+        "error" => false,
+        "message" => 'Please enter correct number',
+        'data' => "Here"
+    ]);
     exit();
 }
 ?>
