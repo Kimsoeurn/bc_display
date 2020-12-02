@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_bet.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_bet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,11 +56,13 @@
       <workItem from="1606675682025" duration="19231000" />
       <workItem from="1606724186807" duration="6216000" />
       <workItem from="1606866442714" duration="2633000" />
+      <workItem from="1606873718488" duration="302000" />
+      <workItem from="1606938573698" duration="773000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -80,10 +81,15 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="541" y="373" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1606869515560" />
-    <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup" timestamp="1606724225556">
-      <screen x="-1920" y="-180" width="1920" height="1080" />
+    <state x="229" y="86" key="SettingsEditor" timestamp="1606938643107">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="229" y="86" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1606938643107" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup" timestamp="1606938982435">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="-1295" y="61" width="670" height="676" key="search.everywhere.popup/0.0.1440.900/-1920.-180.1920.1080@-1920.-180.1920.1080" timestamp="1606724225556" />
+    <state x="469" y="201" width="670" height="564" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1606938982435" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

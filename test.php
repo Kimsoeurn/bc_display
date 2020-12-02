@@ -49,8 +49,16 @@ require_once("core.php");
 
     ?>
     <div class="row">
-        <div class="col-3 p-3">
-            <?php if($rs1['status']==1){echo "OPEN";}else{echo "CLOSE ";}?>
+        <div class="col-6">
+            <img src="images/LOGO_GDC.png" class="img-fluid float-left mr-3" width="150px" alt="logo">
+            <h1 class="text-white" style="padding-top: 40px;">Diamond City Baccarat Display</h1>
+        </div>
+        <div class="col-4">
+            <h3 class="text-white float-left" style="padding-top: 45px;">Table: <?=$table_num?></h3>
+            <h3 class="text-white   float-right" style="padding-top: 45px;">Shoe: <?=$rs1['shoe_no'];?></h3>
+        </div>
+        <div class="col-2 p-3">
+            <h3 class="text-white float-left" style="padding-top: 30px; padding-right: 10px; padding-left: 50px;"><?php if($rs1['status']==1){echo "OPEN";}else{echo "CLOSE ";}?></h3>
             <form id="form-input-value" method="post" action="add_bet.php">
                 <input name="table_num" type="hidden" value="<?php echo $table_num; ?>" />
                 <input name="shoe_num" type="hidden" value="<?php echo $rs1['shoe_no']; ?>" />
@@ -70,7 +78,7 @@ require_once("core.php");
                         maxlength="3"
                         name="win2"
                         onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"
-                        style="border-radius: 0; border: 0;"
+                        style="border-radius: 0; border: 0; width: 80px; float: right; margin-top: 25px;"
                 />
             </form>
         </div>
