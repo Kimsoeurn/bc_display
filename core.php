@@ -170,64 +170,64 @@ function newShoe($table_num, $shoe, $bet_max, $bet_min, $tie_max, $tie_min, $pai
 }
 
 function undoResult($table_num, $bet_max, $shoe) {
-        $strSQL11 = "SELECT * from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and status ='1'  and shoe_no='$shoe' ";
-        $rs = sql_query($strSQL11);
+    $strSQL11 = "SELECT * from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and status ='1'  and shoe_no='$shoe' ";
+    $rs = sql_query($strSQL11);
+    $sum_p = $rs['sum_p'];
+    $sum_b = $rs['sum_b'];
+    $sum_t = $rs['sum_t'];
+    $sum_pb = $rs['sum_pb'];
+    $sum_pp = $rs['sum_pp'];
+    $a1 = explode(",", $rs['bet1']);
+    $b1 = count($a1);
+//check bet data
+    if (empty($rs['bet1'])) {
+        $bb = "";
+    } else {
+        $bb = $rs['bet1'];
+    }
+    $tt = array_pop($a1);
+    if (strlen($bb) - strlen($tt) - 1 < 0) {
+        $num_text = 0;
+    } else {
+        $num_text = strlen($bb) - strlen($tt) - 1;
+    }
+    $bet_data = iconv_substr($bb, 0, $num_text);
+//check sum bet
+    if (substr($tt, 3, 1) == "1") {
+        $sum_p = $rs['sum_p'] - 1;
+    } else {
         $sum_p = $rs['sum_p'];
+    } //Sum Player
+    if (substr($tt, 3, 1) == "2") {
+        $sum_b = $rs['sum_b'] - 1;
+    } else {
         $sum_b = $rs['sum_b'];
+    } //Sum Banker
+    if (substr($tt, 3, 1) == "3") {
+        $sum_t = $rs['sum_t'] - 1;
+    } else {
         $sum_t = $rs['sum_t'];
+    } //Sum Tie
+////check sum pair
+    if (substr($tt, 4, 1) == "1") {
+        $sum_pp = $rs['sum_pp'] - 1;
         $sum_pb = $rs['sum_pb'];
-        $sum_pp = $rs['sum_pp'];
-        $a1 = explode(",", $rs['bet1']);
-        $b1 = count($a1);
-        //check bet data
-        if (empty($rs['bet1'])) {
-            $bb = "";
+    } else {
+        if (substr($tt, 4, 1) == "2") {
+            $sum_pb = $rs['sum_pb'] - 1;
+            $sum_pp = $rs['sum_pp'];
         } else {
-            $bb = $rs['bet1'];
-        }
-        $tt = array_pop($a1);
-        if (strlen($bb) - strlen($tt) - 1 < 0) {
-            $num_text = 0;
-        } else {
-            $num_text = strlen($bb) - strlen($tt) - 1;
-        }
-        $bet_data = iconv_substr($bb, 0, $num_text);
-        //check sum bet
-        if (substr($tt, 3, 1) == "1") {
-            $sum_p = $rs['sum_p'] - 1;
-        } else {
-            $sum_p = $rs['sum_p'];
-        } //Sum Player
-        if (substr($tt, 3, 1) == "2") {
-            $sum_b = $rs['sum_b'] - 1;
-        } else {
-            $sum_b = $rs['sum_b'];
-        } //Sum Banker
-        if (substr($tt, 3, 1) == "3") {
-            $sum_t = $rs['sum_t'] - 1;
-        } else {
-            $sum_t = $rs['sum_t'];
-        } //Sum Tie
-        ////check sum pair
-        if (substr($tt, 4, 1) == "1") {
-            $sum_pp = $rs['sum_pp'] - 1;
-            $sum_pb = $rs['sum_pb'];
-        } else {
-            if (substr($tt, 4, 1) == "2") {
+            if (substr($tt, 4, 1) == "3") {
+                $sum_pp = $rs['sum_pp'] - 1;
                 $sum_pb = $rs['sum_pb'] - 1;
-                $sum_pp = $rs['sum_pp'];
             } else {
-                if (substr($tt, 4, 1) == "3") {
-                    $sum_pp = $rs['sum_pp'] - 1;
-                    $sum_pb = $rs['sum_pb'] - 1;
-                } else {
-                    $sum_pb = $rs['sum_pb'];
-                    $sum_pp = $rs['sum_pp'];
-                }
+                $sum_pb = $rs['sum_pb'];
+                $sum_pp = $rs['sum_pp'];
             }
         }
+    }
 
-        $strSQL = "UPDATE table_detail SET 
+    $strSQL = "UPDATE table_detail SET 
                         bet1 = '$bet_data',
                         sum_p = '$sum_p',
                         sum_b = '$sum_b', 
@@ -239,32 +239,32 @@ function undoResult($table_num, $bet_max, $shoe) {
                         AND status ='1' 
                         AND shoe_no='$shoe' ";
 
-        mysqli_query($GLOBALS['db'], $strSQL) or die ("Can not update") . mysqli_error();
+    mysqli_query($GLOBALS['db'], $strSQL) or die ("Can not update") . mysqli_error();
 
-        $sql = "select  id  from table_road where co  !='0' order by id DESC";
+    $sql = "select  id  from table_road where co  !='0' order by id DESC";
 
-        $rss99 = sql_query($sql);
-        $id99 = $rss99['id'];
-        $strSQL3 = "UPDATE table_road  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
-        mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
+    $rss99 = sql_query($sql);
+    $id99 = $rss99['id'];
+    $strSQL3 = "UPDATE table_road  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
+    mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
 
-        $sql = "select  id  from table_road1 where co  !='0' order by id DESC";
-        $rss99 = sql_query($sql);
-        $id99 = $rss99['id'];
-        $strSQL3 = "UPDATE table_road1  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
-        mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
+    $sql = "select  id  from table_road1 where co  !='0' order by id DESC";
+    $rss99 = sql_query($sql);
+    $id99 = $rss99['id'];
+    $strSQL3 = "UPDATE table_road1  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
+    mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
 
-        $sql = "select  id  from table_road2 where co  !='0' order by id DESC";
-        $rss99 = sql_query($sql);
-        $id99 = $rss99['id'];
-        $strSQL3 = "UPDATE table_road2  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
-        mysql_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
+    $sql = "select  id  from table_road2 where co  !='0' order by id DESC";
+    $rss99 = sql_query($sql);
+    $id99 = $rss99['id'];
+    $strSQL3 = "UPDATE table_road2  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
+    mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
 
-        $sql = "select  id  from table_road3 where co  !='0' order by id DESC";
-        $rss99 = sql_query($sql);
-        $id99 = $rss99['id'];
-        $strSQL3 = "UPDATE table_road3  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
-        mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
+    $sql = "select  id  from table_road3 where co  !='0' order by id DESC";
+    $rss99 = sql_query($sql);
+    $id99 = $rss99['id'];
+    $strSQL3 = "UPDATE table_road3  set co ='', ro =''  ,status ='' ,rm ='' where id= '$id99' ";
+    mysqli_query($GLOBALS['db'], $strSQL3) or die ("Can not insert data") . mysqli_error();
 }
 
 function dd($data) {

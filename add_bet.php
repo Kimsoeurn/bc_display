@@ -37,7 +37,11 @@ if (!empty($win2)) {
         newShoe($table_num, $shoe, $bet_max, $bet_min, $tie_max, $tie_min, $pair_max, $pair_min);
     } elseif ($win2 == '-') {
         undoResult($table_num, $bet_max, $shoe);
-        header("Location:test.php?table_num=$table_num&bet_max=$bet_max&shoe=$shoe");
+        header('Content-Type: application/json');
+        echo json_encode([
+            "error" => false,
+            "message" => 'Undo successfully'
+        ]);
         exit();
     } elseif (
         $win2 == "101" or

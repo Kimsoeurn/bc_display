@@ -77,7 +77,6 @@ require_once("core.php");
                         id="input-value"
                         maxlength="3"
                         name="win2"
-                        onkeyup="this.value=this.value.replace(/[^0-9.]/g,'')"
                         style="border-radius: 0; border: 0; width: 80px; float: right; margin-top: 25px;"
                 />
             </form>
