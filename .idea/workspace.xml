@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/add_bet.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_bet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core.php" beforeDir="false" afterPath="$PROJECT_DIR$/core.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/modal_winner.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/modal_winner.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpconfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/table_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/table_info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing.php" beforeDir="false" afterPath="$PROJECT_DIR$/testing.php" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,11 +81,12 @@
       <workItem from="1606866442714" duration="2633000" />
       <workItem from="1606873718488" duration="302000" />
       <workItem from="1606938573698" duration="773000" />
+      <workItem from="1607028985324" duration="9971000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

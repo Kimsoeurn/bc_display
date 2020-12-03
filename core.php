@@ -363,6 +363,7 @@ function AddBigRoadTable() {
         $b2 = count($a2);
         $num = 1;
         $coo1 = 1;
+        $data = [];
         for ($e2 = 0; $e2 < $b2; $e2++) {
 
             $ck_bet1 = $a2[$e2];
@@ -370,7 +371,9 @@ function AddBigRoadTable() {
 //        $ck_bet3 = $a2[$e2];
             $ck_bet2 = $e2 >= 1 ? $a2[$e2 - 1] : $a2[$e2];
             $ck_bet3 = $e2 >= 2 ? $a2[$e2 - 1] : $a2[$e2];
-
+            $data['ck1'][] = $ck_bet1;    
+            $data['ck2'][] = $ck_bet2;    
+            $data['ck3'][] = $ck_bet3;    
             if ($ck_bet1 == 3) {
                 $ck_bet4++;
                 if ($a2[$e2 - $ck_bet4] == '') {
@@ -393,7 +396,6 @@ function AddBigRoadTable() {
                 }
             }
 
-//     echo $ck_bet1."--".$t_1."<br>";
             if ($e2 <= 0) {
                 $rm = 1;
                 $re = " case1 " . $t_1 . "--" . $ck_bet4;
@@ -425,20 +427,20 @@ function AddBigRoadTable() {
 
             }
             $num++;
-//    echo $ck_bet1 . "--" . $t_1 . "<br>";
             $j = $e2 + 1;
             $strSQL4 = "update table_road3 set  rm='$rm'   where id ='$j' and co !='0' ";
             mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
             $str8 = "SELECT rm from table_road3 where rm='$rm' and co !='0' ";
             $result8 = mysqli_query($GLOBALS['db'], $str8);
             $nr = mysqli_num_rows($result8);
-            if ($nr > 1) {
-                $rm = $rm + 5;
-                $strSQL4 = "update table_road3 set  rm='$rm'   where id ='$j' and co !='0' ";
-                mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
+            // if ($nr > 1) {
+            //     $rm = $rm + 5;
+            //     $strSQL4 = "update table_road3 set  rm='$rm'   where id ='$j' and co !='0' ";
+            //     mysqli_query($GLOBALS['db'], $strSQL4) or die ("Can not insert data") . mysqli_error();
 
-            }
+            // }
         }
+
         $str8 = "SELECT max(rm) as rmm from table_road3   ";
         $result8 = mysqli_query($GLOBALS['db'], $str8);
         $rs = mysqli_fetch_array($result8, MYSQLI_ASSOC);
@@ -587,8 +589,8 @@ function AddCockRoachRoad() {
         $coo1 = 1;
         for ($e2 = 0; $e2 < $b2; $e2++) {
 
-            $ck_bet1 = $a2[$num];
-            $ck_bet2 = $a2[$num - 1];
+            $ck_bet1 = $e2 > 0 ? $a2[$num] : "";
+            $ck_bet2 = $e2 > 1 ? $a2[$num - 1] : "";
             if ($e2 == 0) {
                 $rm = 1;
                 $re = " case1 ";
@@ -774,8 +776,8 @@ function AddBigEyeBoard() {
     $num = 1;
     $coo1 = 1;
     for ($e2 = 0; $e2 < $b2; $e2++) {
-        $ck_bet1 = $a2[$num];
-        $ck_bet2 = $a2[$num - 1];
+        $ck_bet1 = $e2 > 0 ? $a2[$num] : "";
+        $ck_bet2 = $e2 > 1 ? $a2[$num - 1] : "";
         if ($e2 == 0) {
             $rm = 1;
             $re = " case1 ";
@@ -962,13 +964,13 @@ function addSmallRoad() {
 
     $a2 = !empty($data_bet) ? explode(",", $data_bet) : [];
     $b2 = count($a2);
-
+//    dd($a2);
     $num = 1;
     $coo1 = 1;
     for ($e2 = 0; $e2 < $b2; $e2++) {
 
-        $ck_bet1 = $a2[$num];
-        $ck_bet2 = $a2[$num - 1];
+        $ck_bet1 = $e2 > 0 ? $a2[$num] : "";
+        $ck_bet2 = $e2 > 1 ? $a2[$num - 1] : "";
         if ($e2 == 0) {
             $rm = 1;
             $re = " case1 ";
@@ -1014,4 +1016,3 @@ function addSmallRoad() {
 
     }
 }
-

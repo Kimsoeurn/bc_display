@@ -283,10 +283,10 @@ function Chk_bet2($t1, $table_num, $bet_max, $win2, $shoe)
     } else {
         $a1 = explode(",", $rs88['bet1']);
         $b1 = count($a1);//�Ѻ�ӹǹ������
-        $re = substr($a1[$t1 - 1], 3, 1);
-        if ($re == "1") return "images/BigEyeRoad/pp.png";
-        if ($re == "2") return "images/BigEyeRoad/bb.png";
-        if ($re == "3") return "images/BigEyeRoad/tt.png";
+        $re = !empty($a1[$t1 - 1]) ? substr($a1[$t1 - 1], 3, 1) : "";
+        if ($re == "1") return "images/icons/p.png";
+        if ($re == "2") return "images/icons/b.png";
+        if ($re == "3") return "images/icons/t.png";
         return "images/BigEyeRoad/T.gif";
     }
 }
@@ -1401,10 +1401,10 @@ function Chk_net3($key)
 
             if ($key == 1) {
                 if ($re1 == "2") {
-                    return "images/CockroachRoad/B.png";
+                    return "images/icons/cock/b.png";
                 }
                 if ($re1 == "1") {
-                    return "images/CockroachRoad/P.png";
+                    return "images/icons/cock/p.png";
                 }
                 if ($re1 == "0") {
                     return "images/CockroachRoad/T.gif";
@@ -1413,10 +1413,10 @@ function Chk_net3($key)
                 }
             } else {
                 if ($re2 == "2") {
-                    return "images/CockroachRoad/B.png";
+                    return "images/icons/cock/b.png";
                 }
                 if ($re2 == "1") {
-                    return "images/CockroachRoad/P.png";
+                    return "images/icons/cock/p.png";
                 }
                 if ($re2 == "0") {
                     return "images/CockroachRoad/T.gif";
@@ -1633,10 +1633,10 @@ function Chk_net2($key)
 
             if ($key == 1) {
                 if ($re1 == "2") {
-                    return "images/SmallRoad/B.png";
+                    return "images/icons/cock/sb.png";
                 }
                 if ($re1 == "1") {
-                    return "images/SmallRoad/P.png";
+                    return "images/icons/cock/sp.png";
                 }
                 if ($re1 == "0") {
                     return "images/SmallRoad/T.gif";
@@ -1645,10 +1645,10 @@ function Chk_net2($key)
                 }
             } else {
                 if ($re2 == "2") {
-                    return "images/SmallRoad/B.png";
+                    return "images/icons/cock/sb.png";
                 }
                 if ($re2 == "1") {
-                    return "images/SmallRoad/P.png";
+                    return "images/icons/cock/sp.png";
                 }
                 if ($re2 == "0") {
                     return "images/SmallRoad/T.gif";
@@ -1865,10 +1865,10 @@ function Chk_net1($key)
 
             if ($key == 1) {
                 if ($re1 == "2") {
-                    return "images/Bigeye/B.png";
+                    return "images/icons/cock/bb.png";
                 }
                 if ($re1 == "1") {
-                    return "images/Bigeye/P.png";
+                    return "images/icons/cock/bp.png";
                 }
                 if ($re1 == "0") {
                     return "images/Bigeye/T.gif";
@@ -1877,10 +1877,10 @@ function Chk_net1($key)
                 }
             } else {
                 if ($re2 == "2") {
-                    return "images/Bigeye/B.png";
+                    return "images/icons/cock/bb.png";
                 }
                 if ($re2 == "1") {
-                    return "images/Bigeye/P.png";
+                    return "images/icons/cock/bp.png";
                 }
                 if ($re2 == "0") {
                     return "images/Bigeye/T.gif";

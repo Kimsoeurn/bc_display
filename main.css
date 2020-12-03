@@ -3,11 +3,12 @@ body {
     /*background-image: url(images/main_BG.png);*/
     /*background-repeat: no-repeat;*/
     /*background: #666666;*/
-    color: #000000 !important;
-background: #396afc;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background: #c94b4b;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4b134f, #c94b4b);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -76,7 +77,7 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
     background: #FFFFFF !important;
 }
 .table-result td, .table-result th { padding: 15px; }
-.table-result th { font-size: 18px !important; padding-left: 30px !important;}
+.table-result th, .table-result td { font-size: 18px !important; padding-left: 30px !important;}
 
 .keypad {
     margin-top: 10px !important;
@@ -141,10 +142,9 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
 .modal-open .modal {
     overflow-x: hidden;
     overflow-y: auto;
-    background: #ED213A;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    /*background: #ED213A;  !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to top, #93291E, #ED213A);  !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to top, #93291E, #ED213A); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
 }
 
 .tie-game {
@@ -166,4 +166,28 @@ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, F
     background: -webkit-linear-gradient(to top, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+.table-b-outline {
+    width: 100% !important;
+    border: 1px solid #dddddd !important;
+}
+
+.table-b-outline tr td {
+    border: 1px solid #dddddd !important;
+}
+
+.player {
+    color: #0575e6 !important;
+}
+.banker {
+    color: #c31432 !important ;
+}
+
+.tie {
+    color: #38ef7d !important;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px #000000 !important;
 }

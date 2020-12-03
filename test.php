@@ -52,35 +52,18 @@ require_once("core.php");
     <div class="row">
         <div class="col-6">
             <img src="images/LOGO_GDC.png" class="img-fluid float-left mr-3" width="150px" alt="logo">
-            <h1 class="text-white" style="padding-top: 40px;">Diamond City Baccarat Display</h1>
+            <h1 class="text-white text-shadow" style="padding-top: 40px;" id="table-info"
+                data-table="<?= $table_num ?>" data-shoe="<?= $shoe ?>" data-bet-max="<?= $bet_max ?>"
+            >
+                Diamond City Baccarat Display
+            </h1>
         </div>
         <div class="col-4">
-            <h3 class="text-white float-left" style="padding-top: 45px;">Table: <?=$table_num?></h3>
-            <h3 class="text-white   float-right" style="padding-top: 45px;">Shoe: <?=$rs1['shoe_no'];?></h3>
+            <h3 class="text-white float-left text-shadow" style="padding-top: 45px;">Table: <span id="table-no"><?=$table_num?></span></h3>
+
         </div>
-        <div class="col-2 p-3">
-            <h3 class="text-white float-left" style="padding-top: 30px; padding-right: 10px; padding-left: 50px;"><?php if($rs1['status']==1){echo "OPEN";}else{echo "CLOSE ";}?></h3>
-            <form id="form-input-value" method="post" action="add_bet.php">
-                <input name="table_num" type="hidden" value="<?php echo $table_num; ?>" />
-                <input name="shoe_num" type="hidden" value="<?php echo $rs1['shoe_no']; ?>" />
-                <input name="shoe" type="hidden" value="<?php echo $shoe; ?>" />
-                <input name="game_num" type="hidden" value="<?php echo $rs1['status']; ?>" />
-                <input name="bet_max" type="hidden" value="<?php echo $rs1['bet_max']; ?>" />
-                <input name="bet_min" type="hidden" value="<?php echo $rs1['bet_min'] ?>" />
-                <input name="tie_max" type="hidden" value="<?php echo $rs1['tie_max'] ?>" />
-                <input name="tie_min" type="hidden" value="<?php echo $rs1['tie_min'] ?>" />
-                <input name="pair_max" type="hidden" value="<?php echo $rs1['pair_max'] ?>" />
-                <input name="pair_min" type="hidden" value="<?php echo $rs1['pair_min'] ?>" />
-                <input name="bg_img" type="hidden" value="<?php echo $bg_img; ?>" />
-                <input
-                        type="text"
-                        class="form-control"
-                        id="input-value"
-                        maxlength="3"
-                        name="win2"
-                        style="border-radius: 0; border: 0; width: 80px; float: right; margin-top: 25px;"
-                />
-            </form>
+        <div class="col-2">
+            <h3 class="text-white float-right text-shadow" style="padding-top: 45px;">Shoe: <span id="shoe-no"><?=$rs1['shoe_no'];?></span></h3>
         </div>
     </div>
     <div class="row no-gutters">
@@ -168,10 +151,10 @@ require_once("core.php");
         </div>
         <div class="col-1">
             <div class="pl-2">
-                <table class="table-b-e-c shadow-lg bg-white" height="289px">
+                <table class="table-b-outline shadow-lg bg-white" height="289px">
                     <tr>
-                        <td style="color: red; text-align: center">Banker</td>
-                        <td style="color: blue; text-align: center">Player</td>
+                        <th class="banker" style="text-align: center; font-size: 28px;">B</th>
+                        <th class="player" style="text-align: center; font-size: 28px;">P</th>
                     </tr>
                     <tr>
                         <td>
@@ -217,7 +200,7 @@ require_once("core.php");
     </div>
     <div class="row no-gutters">
         <div class="col-6">
-            <table class="table-b-e-c shadow-lg table-marker-road" height="344px">
+            <table class="table-b-e-c shadow-lg table-marker-road" style="height: 397px;">
                 <?php
                 $sql88 = "select bet1 from table_detail where table_no = '$table_num' and bet_max = '$bet_max' and  status = '1'  ";
                 $rs88= sql_query($sql88);
@@ -238,88 +221,95 @@ require_once("core.php");
 
 
                 <tr>
-
                     <?php for($t1=$d1; $t1 <= $e1 ; ){ ?>
-                        <td width="617" height="42" scope="col" valign="top"   ><div align="center" style="padding-top:5px">
-                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" />
-                            </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
                 <tr>
                     <?php for($t1=$d2; $t1 <= $e2 ; ){?>
-                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:3px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid" /> </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
                 <tr>
                     <?php for($t1=$d3; $t1 <= $e3 ; ){?>
-                        <td width="617" height="42" scope="col" valign="top" ><div align="center" style="padding-top:1px">   <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
                 <tr>
                     <?php for($t1=$d4; $t1 <= $e4 ; ){?>
-                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:1px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
                 <tr>
                     <?php for($t1=$d5; $t1 <= $e5 ; ){?>
-                        <td width="617" height="42" scope="col" valign="top" > <div align="center" style="padding-top:0px">  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
                 <tr>
                     <?php for($t1=$d6; $t1 <= $e6; ){?>
-                        <td width="617" height="42" scope="col" valign="top" > <div align="center"  style="padding-bottom:5px"  >  <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" class="img-fluid"  /> </div></td>
-                        <?php $t1= $t1+6;}?>
+                        <td style="width: 60px; height: 60px;">
+                            <div class="mx-auto p-1 text-center">
+                                <img src="<?php echo Chk_bet2($t1,$table_num,$bet_max,$win2,$shoe)?>" alt="" width="55px" height="55px" />
+                            </div>
+                        </td>
+                    <?php $t1= $t1+6;}?>
                 </tr>
             </table>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <div class="px-2">
-                <table class="table-result shadow-lg" style="width: 100%; background: #ffffff" height="344">
-                    <tr style="color: red;">
-                        <th style="width: 50%;">Banker</th>
-                        <th><?php echo $sum_b?></th>
-                    </tr>
-                    <tr style="color: blue;">
-                        <th style="width: 50%">Player</th>
-                        <th><?php echo $sum_p?></th>
-                    </tr>
-                    <tr style="color: green;">
-                        <th style="width: 50%">Tie</th>
-                        <th><?php echo $sum_t?></th>
-                    </tr>
-                    <tr style="color: red;">
-                        <th style="width: 50%">Banker Pairs</th>
-                        <th><?php echo $sum_pb?></th>
-                    </tr>
-                    <tr style="color: blue;">
-                        <th style="width: 50%">Player Pairs</th>
-                        <th><?php echo $sum_pp?></th>
-                    </tr>
+                <table class="table-b-outline table-result table-striped shadow-lg" style="width: 100%; background: #ffffff; height: 397px;">
                     <tr class="text-info">
                         <th style="width: 50%">Games</th>
                         <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
                     </tr>
+                    <tr class="banker">
+                        <th style="width: 50%;">Banker</th>
+                        <th><?php echo $sum_b?></th>
+                    </tr>
+                    <tr class="player">
+                        <th style="width: 50%">Player</th>
+                        <th><?php echo $sum_p?></th>
+                    </tr>
+                    <tr class="tie">
+                        <th style="width: 50%">Tie</th>
+                        <th><?php echo $sum_t?></th>
+                    </tr>
+                    <tr class="banker">
+                        <th style="width: 50%">Banker Pairs</th>
+                        <th><?php echo $sum_pb?></th>
+                    </tr>
+                    <tr class="player">
+                        <th style="width: 50%">Player Pairs</th>
+                        <th><?php echo $sum_pp?></th>
+                    </tr>
+
                 </table>
             </div>
 
         </div>
-        <div class="col-4">
-            <div class="row no-gutters">
-                <div class="col-6">
-                    <?php include "table_info.php"; ?>
-                </div>
-                <div class="col-6">
-                    <div class="pl-2">
-                        <table class="table-b-e-c shadow-lg bg-white" height="344px">
-                            <tr>
-                                <td>
-                                    <div class="keypad">/</div> Close Table
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <div class="col-3">
+            <?php include "table_info.php"; ?>
         </div>
     </div>
 </div>
@@ -328,6 +318,86 @@ require_once("core.php");
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
     $(function () {
+        let table = {
+            table_num: $("#table-info").data('table'),
+            shoe: $("#table-info").data('shoe'),
+            bet_max: $("#table-info").data('bet-max')
+        };
+        console.log(table);
+        $(document).on("keypress", function (e) {
+            console.log(e.which);
+            if (e.which == 47) {
+                console.log("close table");
+                location.replace("close.php");
+            }
+            // Undo Score
+            if (e.which == 45) {
+                checkResult({
+                    win2: "-",
+                    table_num: $("#table-info").data('table'),
+                    shoe: $("#table-info").data('shoe'),
+                    bet_max: $("#table-info").data('bet-max')
+                });
+            }
+            // use e.which
+            if (e.which == 49 || e.which == 97 || e.which == 98 || e.which == 50 ) {
+                $("#winner-modal").removeClass('banker-win');
+                $("#winner-modal").removeClass('tie-game');
+                $("#winner-modal").addClass('player-win');
+                $("#winner-modal").modal("show");
+                setTimeout(function() {
+                    $("#winner-modal").modal("hide");
+                    $("#input-value")
+                        .val("")
+                        .focus();
+                }, 5000);
+                checkResult({
+                    win2: "101",
+                    table_num: $("#table-info").data('table'),
+                    shoe: $("#table-info").data('shoe'),
+                    bet_max: $("#table-info").data('bet-max')
+                });
+            }
+
+            if (e.which == 100 || e.which == 52 || e.which == 101 || e.which == 53) {
+                $("#winner-modal").removeClass('player-win');
+                $("#winner-modal").removeClass('tie-game');
+                $("#winner-modal").addClass('banker-win');
+                $("#winner-modal").modal("show");
+                setTimeout(function() {
+                    $("#winner-modal").modal("hide");
+                    $("#input-value")
+                        .val("")
+                        .focus();
+                }, 5000);
+                checkResult({
+                    win2: "201",
+                    table_num: $("#table-info").data('table'),
+                    shoe: $("#table-info").data('shoe'),
+                    bet_max: $("#table-info").data('bet-max')
+                });
+            }
+
+            if (e.which == 99 || e.which == 51) {
+                $("#winner-modal").removeClass('player-win');
+                $("#winner-modal").removeClass('banker-win');
+                $("#winner-modal").addClass('tie-game');
+                $("#winner-modal").modal("show");
+                setTimeout(function() {
+                    $("#winner-modal").modal("hide");
+                    $("#input-value")
+                        .val("")
+                        .focus();
+                }, 5000);
+                checkResult({
+                    win2: "301",
+                    table_num: $("#table-info").data('table'),
+                    shoe: $("#table-info").data('shoe'),
+                    bet_max: $("#table-info").data('bet-max')
+                });
+            }
+        });
+
         // $("#winner-modal").modal("show");
         $("#input-value").focus();
         $("#form-input-value").submit( function (e) {
@@ -362,7 +432,24 @@ require_once("core.php");
             });
         });
     });
-
+    function checkResult(data) {
+        $.ajax({
+            type: 'POST',
+            data: data,
+            url: "add_bet.php",
+            success: function (data) {
+                console.log(data);
+                if (data.error) {
+                    console.log("Error");
+                } else {
+                    window.location.reload();
+                }
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
     function showWinner() {
         $("#winner-modal").modal("show");
 
@@ -383,12 +470,12 @@ require_once("core.php");
 
     ?>
 
-    document.getElementById("P1").innerHTML="<img src=\"<?php echo $p1?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
-    document.getElementById("P2").innerHTML="<img src=\"<?php echo $p2?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
-    document.getElementById("P3").innerHTML="<img src=\"<?php echo $p3?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
-    document.getElementById("P4").innerHTML="<img src=\"<?php echo $p4?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
-    document.getElementById("P5").innerHTML="<img src=\"<?php echo $p5?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
-    document.getElementById("P6").innerHTML="<img src=\"<?php echo $p6?>\" alt=\"\" width=\"20\" height=\"20\" \/>";
+    document.getElementById("P1").innerHTML="<img src=\"<?php echo $p1?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P2").innerHTML="<img src=\"<?php echo $p2?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P3").innerHTML="<img src=\"<?php echo $p3?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P4").innerHTML="<img src=\"<?php echo $p4?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P5").innerHTML="<img src=\"<?php echo $p5?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P6").innerHTML="<img src=\"<?php echo $p6?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
 
 </script>
 <!---////////////////////////////////////////////////////////////////////////////////////////////////---->
