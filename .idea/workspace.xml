@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/modal_winner.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/modal_winner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/table_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +43,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\baccarat_gdc" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -77,7 +79,7 @@
       <workItem from="1606873718488" duration="302000" />
       <workItem from="1606938573698" duration="773000" />
       <workItem from="1607028985324" duration="15911000" />
-      <workItem from="1607103417489" duration="2168000" />
+      <workItem from="1607103417489" duration="2633000" />
     </task>
     <servers />
   </component>
