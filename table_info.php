@@ -1,4 +1,4 @@
-<table class="table-b-outline text-center bg-white shadow-lg" style="width: 100%; height: 397px;">
+<table class="text-center" style="width: 100%; height: 397px;">
     <tr>
         <th></th>
         <th colspan="2">MINIMUM</th>

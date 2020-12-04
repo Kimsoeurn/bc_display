@@ -59,11 +59,9 @@ require_once("core.php");
             </h1>
         </div>
         <div class="col-4">
-            <h3 class="text-white float-left text-shadow" style="padding-top: 45px;">Table: <span id="table-no"><?=$table_num?></span></h3>
-
         </div>
         <div class="col-2">
-            <h3 class="text-white float-right text-shadow" style="padding-top: 45px;">Shoe: <span id="shoe-no"><?=$rs1['shoe_no'];?></span></h3>
+            <h3 class="table-number shadow-lg">Table: <span id="shoe-no"><?= $table_num;?></span></h3>
         </div>
     </div>
     <div class="row no-gutters">
@@ -275,40 +273,45 @@ require_once("core.php");
                 </tr>
             </table>
         </div>
-        <div class="col-3">
-            <div class="px-2">
-                <table class="table-b-outline table-result table-striped shadow-lg" style="width: 100%; background: #ffffff; height: 397px;">
-                    <tr class="text-info">
-                        <th style="width: 50%">Games</th>
-                        <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
-                    </tr>
-                    <tr class="banker">
-                        <th style="width: 50%;">Banker</th>
-                        <th><?php echo $sum_b?></th>
-                    </tr>
-                    <tr class="player">
-                        <th style="width: 50%">Player</th>
-                        <th><?php echo $sum_p?></th>
-                    </tr>
-                    <tr class="tie">
-                        <th style="width: 50%">Tie</th>
-                        <th><?php echo $sum_t?></th>
-                    </tr>
-                    <tr class="banker">
-                        <th style="width: 50%">Banker Pairs</th>
-                        <th><?php echo $sum_pb?></th>
-                    </tr>
-                    <tr class="player">
-                        <th style="width: 50%">Player Pairs</th>
-                        <th><?php echo $sum_pp?></th>
-                    </tr>
+        <div class="col-6 bg-style">
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <div class="px-2">
+                        <table class="table-result" style="width: 100%; height: 397px;">
+                            <tr>
+                                <th style="width: 50%">Games</th>
+                                <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
+                            </tr>
+                            <tr class="banker">
+                                <th style="width: 50%;">Banker</th>
+                                <th><?php echo $sum_b?></th>
+                            </tr>
+                            <tr class="player">
+                                <th style="width: 50%">Player</th>
+                                <th><?php echo $sum_p?></th>
+                            </tr>
+                            <tr class="tie">
+                                <th style="width: 50%">Tie</th>
+                                <th><?php echo $sum_t?></th>
+                            </tr>
+                            <tr class="banker">
+                                <th style="width: 50%">Banker Pairs</th>
+                                <th><?php echo $sum_pb?></th>
+                            </tr>
+                            <tr class="player">
+                                <th style="width: 50%">Player Pairs</th>
+                                <th><?php echo $sum_pp?></th>
+                            </tr>
 
-                </table>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <?php include "table_info.php"; ?>
+                </div>
             </div>
 
-        </div>
-        <div class="col-3">
-            <?php include "table_info.php"; ?>
         </div>
     </div>
 </div>
@@ -469,12 +472,12 @@ require_once("core.php");
 
     ?>
 
-    document.getElementById("P1").innerHTML="<img src=\"<?php echo $p1?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
-    document.getElementById("P2").innerHTML="<img src=\"<?php echo $p2?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
-    document.getElementById("P3").innerHTML="<img src=\"<?php echo $p3?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
-    document.getElementById("P4").innerHTML="<img src=\"<?php echo $p4?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
-    document.getElementById("P5").innerHTML="<img src=\"<?php echo $p5?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
-    document.getElementById("P6").innerHTML="<img src=\"<?php echo $p6?>\" alt=\"\" width=\"40\" height=\"40\" \/>";
+    document.getElementById("P1").innerHTML="<img src=\"<?php echo $p1?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
+    document.getElementById("P2").innerHTML="<img src=\"<?php echo $p2?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
+    document.getElementById("P3").innerHTML="<img src=\"<?php echo $p3?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
+    document.getElementById("P4").innerHTML="<img src=\"<?php echo $p4?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
+    document.getElementById("P5").innerHTML="<img src=\"<?php echo $p5?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
+    document.getElementById("P6").innerHTML="<img src=\"<?php echo $p6?>\" alt=\"\" width=\"25\" height=\"25\" \/>";
 
 </script>
 <!---////////////////////////////////////////////////////////////////////////////////////////////////---->
