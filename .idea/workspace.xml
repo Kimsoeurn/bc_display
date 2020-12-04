@@ -2,16 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f39c1d3-76ba-4010-9c71-7089a1f16a2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/add_bet.php" beforeDir="false" afterPath="$PROJECT_DIR$/add_bet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core.php" beforeDir="false" afterPath="$PROJECT_DIR$/core.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/modal_winner.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/modal_winner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/200000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/200001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2500.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/300000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/400000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/500000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/800000.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Back.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Back1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Stop.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/button-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/login-page-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/main_BG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/main_BG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/main_BG0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/main_BG1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_1.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_2.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/table_3.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/table_3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/phpconfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/phpconfig.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/table_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/table_info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.php" beforeDir="false" afterPath="$PROJECT_DIR$/testing.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +96,7 @@
       <workItem from="1606866442714" duration="2633000" />
       <workItem from="1606873718488" duration="302000" />
       <workItem from="1606938573698" duration="773000" />
-      <workItem from="1607028985324" duration="9971000" />
+      <workItem from="1607028985324" duration="12829000" />
     </task>
     <servers />
   </component>
@@ -121,7 +136,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/phpconfig.php</url>
-          <line>632</line>
+          <line>641</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

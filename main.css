@@ -128,7 +128,13 @@ body {
 }
 
 .table-big-eye-road {
+    width: 100% !important;
+    vertical-align: middle !important;
     background: #ffffff url("./images/big_eye_road.png") no-repeat bottom right;
+}
+.table-big-eye-road td {
+    vertical-align: middle !important;
+    border: 1px #dddddd solid !important;
 }
 
 .table-cock-road {

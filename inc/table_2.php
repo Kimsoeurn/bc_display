@@ -21,45 +21,45 @@
     <tr>
 
         <?php for($t1=$d1; $t1 <= $e1 ; ){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>
     </tr>
     <tr>
         <?php for($t1=$d2; $t1 <= $e2 ; ){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>
     </tr>
     <tr>
         <?php for($t1=$d3; $t1 <= $e3 ; ){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>
     </tr>
     <tr>
         <?php for($t1=$d4; $t1 <= $e4 ; ){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>
     </tr>
     <tr>
         <?php for($t1=$d5; $t1 <= $e5 ;){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>
@@ -67,9 +67,9 @@
 
     <tr>
         <?php for($t1=$d6; $t1 <= $e6 ;){?>
-            <td scope="col">
-                <div class="big-eye-bet">
-                    <img src="<?php echo Chk_bet3($t1 ) ?>" width="15" height="15" />
+            <td style="width: 20px; height: 20px;">
+                <div class="mx-auto text-center">
+                    <img src="<?php echo Chk_bet3($t1 ) ?>" class="img-fluid" />
                 </div>
             </td>
         <?php $t1= $t1+6;}?>

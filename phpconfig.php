@@ -157,6 +157,13 @@ function Chk_bet($t1, $table_num, $bet_max, $win2, $shoe)
     $rs88 = sql_query($sql88);
     $re = !empty($rs88) ? $rs88['status'] : "";
     //PLAYER
+    if ($re == '101') return "images/big_road/p.png";
+    if ($re == '102') return "images/big_road/pp.png";
+    if ($re == '301') return "images/big_road/tp.png";
+    if ($re == '310') return "images/big_road/tp.png";
+    if ($re == '302') return "images/big_road/tb.png";
+    if ($re == '201') return "images/big_road/b.png";
+    if ($re == '202') return "images/big_road/bp.png";
     if ($re == "101") return "images/BigEyeRoad/P01.png";
     if ($re == "102") return "images/BigEyeRoad/P02.png";
     if ($re == "103") return "images/BigEyeRoad/P03.png";
@@ -283,10 +290,12 @@ function Chk_bet2($t1, $table_num, $bet_max, $win2, $shoe)
     } else {
         $a1 = explode(",", $rs88['bet1']);
         $b1 = count($a1);//�Ѻ�ӹǹ������
-        $re = !empty($a1[$t1 - 1]) ? substr($a1[$t1 - 1], 3, 1) : "";
-        if ($re == "1") return "images/icons/p.png";
-        if ($re == "2") return "images/icons/b.png";
-        if ($re == "3") return "images/icons/t.png";
+        $re = !empty($a1[$t1 - 1]) ? substr($a1[$t1 - 1], 3, 3) : "";
+        if ($re == "101") return "images/icons/p.png";
+        if ($re == "102") return "images/icons/pp.png";
+        if ($re == "201") return "images/icons/b.png";
+        if ($re == "202") return "images/icons/pb.png";
+        if ($re == "301" || $re == "310") return "images/icons/t.png";
         return "images/BigEyeRoad/T.gif";
     }
 }
@@ -296,8 +305,8 @@ function Chk_bet3($t1)
     $sql88 = "select * from  table_road  where rm= '$t1' order by id ";
     $rs88 = sql_query($sql88);
     $re1 = $rs88['status'];
-    if ($re1 == "2") return "images/CockroachRoad/B.png";
-    if ($re1 == "1") return "images/CockroachRoad/P.png";
+    if ($re1 == "2") return "images/icons/cock/b.png";
+    if ($re1 == "1") return "images/icons/cock/p.png";
     if ($re1 == "0") return "images/CockroachRoad/T.gif";
     return "images/CockroachRoad/T.gif";
 }
@@ -308,10 +317,10 @@ function Chk_bet4($t1)
     $rs88 = sql_query($sql88);
     $re1 = $rs88['status'];
     if ($re1 == "2") {
-        return "images/Bigeye/B.png";
+        return "images/icons/cock/bb.png";
     }
     if ($re1 == "1") {
-        return "images/Bigeye/P.png";
+        return "images/icons/cock/bp.png";
     }
     if ($re1 == "0") {
         return "images/Bigeye/T.gif";
@@ -326,10 +335,10 @@ function Chk_bet5($t1)
     $rs88 = sql_query($sql88);
     $re1 = $rs88['status'];
     if ($re1 == "2") {
-        return "images/SmallRoad/B.png";
+        return "images/icons/cock/sb.png";
     }
     if ($re1 == "1") {
-        return "images/SmallRoad/P.png";
+        return "images/icons/cock/sp.png";
     }
     if ($re1 == "0") {
         return "images/SmallRoad/T.gif";

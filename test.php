@@ -194,7 +194,6 @@ require_once("core.php");
             </div>
         </div>
         <div class="col-4">
-
             <?php include "inc/table_2.php"; ?>
         </div>
     </div>
