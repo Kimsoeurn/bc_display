@@ -82,7 +82,7 @@ body {
     background: #FFFFFF !important;
 }
 .table-result td, .table-result th { padding: 15px; }
-.table-result th, .table-result td { font-size: 18px !important; padding-left: 30px !important;}
+.table-result th, .table-result td { font-size: 20px !important; padding-left: 30px !important;}
 
 .keypad {
     margin-top: 10px !important;
@@ -201,6 +201,10 @@ body {
 
 .text-shadow {
     text-shadow: 2px 2px 4px #000000 !important;
+}
+
+.text-shadow-sm {
+    /*text-shadow: 1px 1px 1px #010101 !important;*/
 }
 
 .table-number {

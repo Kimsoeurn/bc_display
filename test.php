@@ -277,7 +277,7 @@ require_once("core.php");
             <div class="row no-gutters">
                 <div class="col-6">
                     <div class="px-2">
-                        <table class="table-result" style="width: 100%; height: 397px;">
+                        <table class="table-result text-shadow-sm" style="width: 100%; height: 397px;">
                             <tr>
                                 <th style="width: 50%">Games</th>
                                 <th><?php echo ($sum_pp + $sum_b + $sum_p + $sum_pb + $sum_t)?></th>
@@ -290,7 +290,7 @@ require_once("core.php");
                                 <th style="width: 50%">Player</th>
                                 <th><?php echo $sum_p?></th>
                             </tr>
-                            <tr class="tie">
+                            <tr class="tie text-shadow">
                                 <th style="width: 50%">Tie</th>
                                 <th><?php echo $sum_t?></th>
                             </tr>
@@ -328,6 +328,10 @@ require_once("core.php");
         console.log(table);
         $(document).on("keypress", function (e) {
             console.log(e.which);
+            // new shoe
+            if (e.which == 42) {
+                $("#modal-new-shoe").modal('show');
+            }
             if (e.which == 47) {
                 console.log("close table");
                 location.replace("close.php");
@@ -346,6 +350,7 @@ require_once("core.php");
                 $("#winner-modal").removeClass('banker-win');
                 $("#winner-modal").removeClass('tie-game');
                 $("#winner-modal").addClass('player-win');
+                $("#winner-text").text('Player Win!');
                 $("#winner-modal").modal("show");
                 setTimeout(function() {
                     $("#winner-modal").modal("hide");
@@ -353,8 +358,9 @@ require_once("core.php");
                         .val("")
                         .focus();
                 }, 5000);
+                let p = e.which == 49 || e.which == 97 ? "101" : "102";
                 checkResult({
-                    win2: "101",
+                    win2: p,
                     table_num: $("#table-info").data('table'),
                     shoe: $("#table-info").data('shoe'),
                     bet_max: $("#table-info").data('bet-max')
@@ -365,6 +371,7 @@ require_once("core.php");
                 $("#winner-modal").removeClass('player-win');
                 $("#winner-modal").removeClass('tie-game');
                 $("#winner-modal").addClass('banker-win');
+                $("#winner-text").text('Banker Win!');
                 $("#winner-modal").modal("show");
                 setTimeout(function() {
                     $("#winner-modal").modal("hide");
@@ -372,8 +379,9 @@ require_once("core.php");
                         .val("")
                         .focus();
                 }, 5000);
+                let b = e.which == 52 || e.which == 100 ? "201" : "202";
                 checkResult({
-                    win2: "201",
+                    win2: b,
                     table_num: $("#table-info").data('table'),
                     shoe: $("#table-info").data('shoe'),
                     bet_max: $("#table-info").data('bet-max')
@@ -384,6 +392,7 @@ require_once("core.php");
                 $("#winner-modal").removeClass('player-win');
                 $("#winner-modal").removeClass('banker-win');
                 $("#winner-modal").addClass('tie-game');
+                $("#winner-text").text('Tie!');
                 $("#winner-modal").modal("show");
                 setTimeout(function() {
                     $("#winner-modal").modal("hide");
